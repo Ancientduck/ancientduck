@@ -63,3 +63,24 @@ margin: auto;
  background-color: green;
 
 }
+.link1 {
+    color: palevioletred; /* Default link color */
+    transition: background-color 0.3s; /* Smooth transition effect */
+    padding:5px;
+}
+
+.link1:hover {
+    background-color: green;
+}
+.link2 {
+    color:palevioletred ;
+    transition: background-color 0.3s;
+    padding:5px;
+    vertical-align: text-top;
+    position: relative;
+    top: -4px; 
+}
+.link2:hover {
+    background-color:green;
+
+}
