@@ -78,7 +78,7 @@ p {
     animation: link2 2s infinite linear; /* Simplified animation property */
     text-decoration: none;
     white-space: nowrap;
-    animation-delay:400ms ;
+    animation-delay:600ms ;
 }
 .link2:hover {
     background-color: green;
