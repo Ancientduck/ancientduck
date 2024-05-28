@@ -68,84 +68,95 @@ p {
 .link1:hover {
     background-color: green;
 }
-.link2 {
-    color: palevioletred;
+
+.rocket {
     transition: background-color 0.3s;
-    padding: 5px;
-    border: 1px solid grey;
-    vertical-align: text-top;
-    position: relative;
-    top: -4px;
-    animation: link2 5s infinite linear; /* Simplified animation property */
-    text-decoration: none;
+    vertical-align: bottom;
+    top: 0;
+    animation: rocket 5s infinite linear;
     white-space: nowrap;
-    animation-delay:700ms ;
+    font-size: 100px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-end;
+    filter: blur(1.5px);
+    overflow: visible; 
 }
-.link2:hover {
-    background-color: green;
-}
-@keyframes link2 {
-    0% {
-        background-color: palevioletred;
-        left: 0;
-        top: 0;
-    }
-    10% {
-        background-color: grey;
-        left: 200px; /* Move fast to the right */
-        top: 200px;
-    }
-    20% {
-        background-color: green;
-        left: -200px; /* Move fast to the left */
-        top: -200px;
-    }
-    30% {
-        background-color: blue;
-        left: 400px; /* Move diagonally up-right */
-        top: -200px;
-    }
-    40% {
-        background-color: yellow;
-        left: -400px; /* Move diagonally down-left */
-        top: 200px;
-    }
-    50% {
-        background-color: orange;
-        left: 200px; /* Move fast to the right */
-        top: -400px;
-    }
-    60% {
-        background-color: pink;
-        left: -200px; /* Move fast to the left */
-        top: 400px;
-    }
-    70% {
-        background-color: purple;
-        left: 300px; /* Move diagonally up-right */
-        top: -300px;
-    }
-    80% {
-        background-color: teal;
-        left: -300px; /* Move diagonally down-left */
-        top: 300px;
-    }
-    90% {
-        background-color: brown;
-        left: 100px; /* Move slowly to the right */
-        top: -100px;
-    }
-    100% {
-        background-color: palevioletred;
-        left: 0;
-        top: 0;
+@media (max-width: 769px) {
+    .rocket {
+        text-shadow: 
+        0 0 5px #00ff00, /* Green */
+        0 0 10px #00dd00, /* Lighter green */
+        0 0 15px #00bb00, /* Even lighter green */
+        0 0 20px #009900; /* Darkest green */
     }
 }
 
-.icons {
+@media (min-width: 768px) {
+    .rocket:hover {
+        text-shadow: 
+        0 0 5px #00ff00, /* Green */
+        0 0 10px #00dd00, /* Lighter green */
+        0 0 15px #00bb00, /* Even lighter green */
+        0 0 20px #009900; /* Darkest green */
+    }
+}
+
+@keyframes rocket {
+    0% {
+        transform: translateY(100vh) translateX(0) rotate(-45deg);
+    }
+    10% {
+        transform: translateY(80vh) translateX(-5px) rotate(-45deg);
+    }
+    20% {
+        transform: translateY(60vh) translateX(5px) rotate(-45deg);
+    }
+    30% {
+        transform: translateY(40vh) translateX(-5px) rotate(-45deg);
+    }
+    40% {
+        transform: translateY(20vh) translateX(5px) rotate(-45deg);
+    }
+    50% {
+        transform: translateY(0vh) translateX(-5px) rotate(-45deg);
+    }
+    60% {
+        transform: translateY(-20vh) translateX(5px) rotate(-45deg);
+    }
+    70% {
+        transform: translateY(-40vh) translateX(-5px) rotate(-45deg);
+    }
+    80% {
+        transform: translateY(-60vh) translateX(5px) rotate(-45deg);
+    }
+    90% {
+        transform: translateY(-80vh) translateX(-5px) rotate(-45deg);
+    }
+    100% {
+        transform: translateY(-100vh) translateX(0) rotate(-45deg);
+    }
+}
+
+
+.icons:hover {
+    background-color: green;
+    transition: 0.3s;
+    
+}
+@keyframes icons {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% {transform: scale(1);}
+}
+
+@media (max-width:1024px) {
+    .icons {
     font-size:xx-large;
     background-image: url(VICECITY.jpg);
-    display:inline-flex;
+    display: inline-flex;
+    flex-direction: row;
     justify-content:center;
     align-items: center;
     border: 1px solid chocolate;
@@ -158,20 +169,32 @@ p {
     overflow: hidden; 
     background-size: contain;
     background-position: center;
-    left: 50%;
     position: relative;
     bottom: 0;
-    
+    left:38%;
+    }
+} 
+@media (min-width: 1024px) {
+    .icons {
+        font-size:xx-large;
+        background-image: url(VICECITY.jpg);
+        display: inline-flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items: center;
+        border: 1px solid chocolate;
+        padding: 15px;
+        margin: 20px;
+        box-shadow: 10px 10px 20px 5px rgb(0, 0, 0);
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+        animation-name: icons;
+        overflow: hidden; 
+        background-size: contain;
+        background-position: center;
+        position: relative;
+        bottom: 0;
+        left:46% ;
+        
+        }
 }
-.icons:hover {
-    background-color: green;
-    transition: 0.3s;
-    
-}
-@keyframes icons {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.5); }
-    100% {transform: scale(1);}
-}
-
- 
