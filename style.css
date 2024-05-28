@@ -81,7 +81,8 @@ p {
     justify-content: center;
     align-items: flex-end;
     filter: blur(1.5px);
-    overflow: visible; 
+    overflow: visible;
+    position: sticky;  
 }
 @media (max-width: 769px) {
     .rocket {
