@@ -1,19 +1,21 @@
 function displaydate() {
-    document.getElementById("date").innerHTML = Date();
+   var dateElement= document.getElementById("date");
+    dateElement.innerHTML = new Date();
     
     setTimeout(function() {
-        dateElement.innerHTML = ""; // Clear the content
-    }, 3000); // 3000 mill
+        dateElement.innerHTML = "";
+    }, 3000); 
+
 }
 
 function bulb() {
-   var element1 = document.getElementById('bulb').style.display='block'
+   var element1 = document.getElementById('Tommy').style.display='block'
    var element2 = document.getElementById('off').style.display='block'
 
 }
 
 function bulb2 () {
 
-    var element1 = document.getElementById('bulb').style.display='none'
+    var element1 = document.getElementById('Tommy').style.display='none'
     var element2 = document.getElementById('off').style.display='none'
 }
