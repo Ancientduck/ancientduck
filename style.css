@@ -63,8 +63,12 @@ p {
 .link1 {
     color: palevioletred;
     transition: background-color 0.3s;
-    padding: 5px;
+    text-decoration: none;
+    box-shadow: 1px 1px 3px 1px black;
+    margin:20px;
+   
 }
+
 .link1:hover {
     background-color: green;
 }
@@ -81,8 +85,8 @@ p {
     justify-content: center;
     align-items: flex-end;
     filter: blur(1.5px);
-    overflow: visible;
-    position: sticky;  
+    overflow: visible; 
+    position:sticky;
 }
 @media (max-width: 769px) {
     .rocket {
@@ -198,4 +202,110 @@ p {
         left:46% ;
         
         }
+  
 }
+   .dropbackground {
+       background-image: url("VICECITY.jpg");
+       background-position:center;
+       display: flex;
+       list-style-type: none;
+       display: flex;
+       gap: 20px;
+       font-size: x-large;
+       border: 1px solid chocolate;
+       padding: 15px;
+       margin: 20px;
+       box-shadow: 10px 10px 20px 5px rgb(0, 0, 0);
+       overflow: visible;
+       position: relative;
+   }
+
+   .drop-content {
+       display: none;
+      position: absolute;
+      z-index: 1 ;
+      box-shadow: 1px 1px 5px 1px black;
+      background-image: url(VICECITY.jpg);
+      margin-top: 5px ;
+      
+   }
+   .drop-content a {
+  display:block;
+  text-decoration: none;
+  color: green;
+  z-index: 1 ;
+   }
+   
+    
+   
+
+   .dropbutton:hover .drop-content {
+       display: block;
+    
+       
+   
+   }
+   .dropbutton:hover {
+     background-color: green;
+     padding: 5px;
+     color: rgb(151, 69, 96);
+     box-shadow: 1px 1px 4px 1px black ;
+      
+   }
+   .dropbutton {
+    margin-bottom: auto;
+   }
+    .drop-content a:hover {
+     color: blue;
+
+    }
+    @media (max-width: 600px) {
+        
+        .dropbackground {
+            background-image: url(VICECITY.jpg);
+            background-size: cover;
+        }
+            
+        }
+        button {
+            font-weight:bold;
+            color: palevioletred;
+            box-shadow: 1px 1px 3px 1px black;
+            
+        }
+        button:hover {
+             background-color: green;
+        }
+        .bulb{
+            display: none;
+        }
+        .off{
+
+            display: none;
+        }
+
+        
+    
+
+             
+        
+           
+
+
+    
+   
+
+   
+   
+
+
+
+
+
+
+
+
+    
+
+    
+
