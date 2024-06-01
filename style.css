@@ -257,9 +257,11 @@ p {
     margin-bottom: auto;
     padding: 5px;
     box-shadow: 1px 1px 4px 1px black;
+    cursor: pointer;
    }
     .drop-content a:hover {
      color: blue;
+     
 
     }
     @media (max-width: 600px) {
@@ -309,11 +311,20 @@ p {
                 left: 1px;
 
              }
-            
 
         }
 
-        
+        .musicbutton {              
+                display: flex;
+                padding: 10px 20px;               
+                margin: 20px auto;
+                color: palevioletred;
+                background-color: #3d475288;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                
+                }
     
        
              

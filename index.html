@@ -9,25 +9,32 @@
     <title>Webpage</title>
 </head>
 <body>
+    <audio id="enterVC"><source src="things/EnterVC.mp3" type="audio/mpeg"></audio>
+    <audio id="exitVC"><source src="things/exitVC.mp3" type="audio/mpeg"></audio>
+    <audio id="music"><source src="things/vicecitymusic.mp3" type="audio/mpeg"></audio>
     <div class="pricedown">
         <h1>BACK TO VICE CITY</h1>
+          
+               
         <div class="box">
             <h1>
                 First website ever made by <br>
-                <a href="https://www.facebook.com/apurbo.mostafiz/" target="_blank" class="link1"> Apurbo Da Vinci</a>
+                <a href="https://www.facebook.com/apurbo.mostafiz/" target="_blank" class="link1" onclick="sound()" id= "link1" > Apurbo Da Vinci </a>
+                <button class="musicbutton" id="musicbuttonON">Play music</button> 
+                <button class="musicbutton" id="musicbuttonOFF" style="display: none;">pause music</button>
             </h1>
-            <button class="button" onclick="displaydate()">date</button>
+            <button class="button" id="datehover">date</button>
             <p id="date"></p>
         </div>
 
         <div class="dropbackground">    
-            <div class="dropbutton">Rockets
+            <div class="dropbutton" id="rocket">Rockets
          
-            <div class="drop-content">
+            <div class="drop-content" id="rocket2">
                 
-                <a href="solar-sys.html"> MX-774 </a>
-                <a href="solar-sys.html"> Atlas </a>
-                <a href="solar-sys.html"> Delta </a>
+                <a id ="dropdownmenu1"  href="solar-sys.html" target="_blank"> MX-774 </a>
+                <a id = "dropdownmenu2" href="solar-sys.html" target="_blank"> Atlas </a>
+                <a id ="dropdownmenu3"  href="solar-sys.html" target="_blank"> Delta </a>
 
             </div>
             </div>
@@ -42,15 +49,15 @@
         <div class="box">
             <p>
                 Gif of stickman fighting <br> :D more things coming soon
-            <div class="rocket" style="left: 50% ;">
+            <div class="rocket" style="left: 50% ;" onclick="sound()">
                 <a href="solar-sys.html" target="_blank" style="color: palevioletred;"><i class="fa-solid fa-rocket"></i></a>
             </div>
                 
             </p>
             <div>
-                <button class="button" type="button" onclick="bulb()">press me</button>
+                <button id="button" class="button" type="button" onclick="tommy()">press me</button>
                 <img src="things/Tommy.png" id="Tommy" class="Tommy">
-                <button class="off" id="off" type="button" onclick="bulb2()">click me</button>
+                <button class="off" id="off" type="button" onclick="tommy2()">click me</button>
 
             </div>
             <div class="gif">
