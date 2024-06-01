@@ -35,7 +35,9 @@ function tommy() {
 
 
 function sound() {
-    var audio = new Audio('EnterVC.mp3'); // Corrected the creation of Audio object
+    var audio = document.getElementById('enterVC')
+    var sound = document.getElementById('enterVC')// Corrected the creation of Audio object
+    audio.currentTime= 0;
     audio.play();
     
 }
