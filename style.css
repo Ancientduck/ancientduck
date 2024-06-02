@@ -326,8 +326,27 @@ p {
                 
                 }
     
-       
-             
+       .clock{
+            display: flex;
+            padding: 30px;
+            margin : 20px auto;
+            width: 160px;
+            background-image: url(VICECITY.jpg);
+            border-radius: 5px;
+            font-size: xx-large;
+            align-items:center;
+            
+            
+            box-shadow: 1px 1px 3px 1px black ;
+
+
+       }
+    .clockindicator {
+        text-align: center;
+        position: relative;
+        top: 50px;
+        right: 5px;
+    }
         
            
 

@@ -99,4 +99,20 @@ document.addEventListener('DOMContentLoaded' , () => {
 })
 }
 
+{
+    function updateClock() {
+      const time = new Date();
+
+      const timecode = time.toLocaleTimeString('en-US', { hour: 'numeric', minute:'numeric', second:"numeric"  } )
+    
+
+    const clock = document.getElementById ('clock');
+    clock.textContent = timecode;
+   
+}
+
+setInterval(updateClock, 1000);
+updateClock(); 
+}
+
 
