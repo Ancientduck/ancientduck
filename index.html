@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00a300">
+    <meta name="theme-color" content="#ffffff">
     <script src="https://kit.fontawesome.com/5b8e9a3f4b.js" crossorigin="anonymous"></script>
-    <title>Webpage</title>
+    <title>DuckWeb</title>
 </head>
 <body>
     <audio id="enterVC"><source src="things/EnterVC.mp3" type="audio/mpeg"></audio>
@@ -16,17 +22,32 @@
         <h1>BACK TO VICE CITY</h1>
           <p class="clockindicator">clock</p>
         <div class="clock" id="clock"></div>
+        
+
                
         <div class="box">
+           
+        <div>
+            <label class="yourname">YOUR NAME ?</label>
+            <input type="text" id="username">
+            <button class="submitbutton" id="submitbtn">submit</button>
+            <h1 id="sayname" class="myname"></h1>
+            </div>
+           <div>
+            <p id="timer" class="timer">the time</p>
+           </div>
             <h1>
-                First website ever made by <br>
+                First website ever made by <br> <br>
                 <a href="https://www.facebook.com/apurbo.mostafiz/" target="_blank" class="link1" onclick="sound()" id= "link1" > Apurbo Da Vinci </a>
                 <button class="musicbutton" id="musicbuttonON">Play music</button> 
                 <button class="musicbutton" id="musicbuttonOFF" style="display: none;">pause music</button>
             </h1>
             <button class="button" id="datehover">date</button>
+            
             <p id="date"></p>
+            
         </div>
+        
 
         <div class="dropbackground">    
             <div class="dropbutton" id="rocket">Rockets
@@ -75,6 +96,7 @@
     <div class="icons">
      <a href="virus.exe" download target="_blank"><i class="fa-solid fa-download"></i></a>
      </div>
+     <script src="script.js"></script>
 </body>
 </html>
 

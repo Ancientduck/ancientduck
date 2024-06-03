@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #chat { list-style: none; padding: 0; }
+        #chat li { padding: 8px; margin-bottom: 10px; background-color: #f1f1f1; }
+        #message { width: 100%; padding: 10px; }
+    </style>
+</head>
+<body style="background-image:url('https://images.freeimages.com/images/large-previews/01a/technology-background-1632715.jpg');
+       background-size:cover;
+	   background-repeat:no-repeat;">
+    <ul id="chat"></ul>
+    <input id="message" autocomplete="off" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        const chat = document.getElementById('chat');
+        const messageInput = document.getElementById('message');
+
+        socket.on('chatMessage', (msg) => {
+            const li = document.createElement('li');
+            li.textContent = msg;
+            chat.appendChild(li);
+        });
+
+        function sendMessage() {
+            const msg = messageInput.value;
+            socket.emit('chatMessage', msg);
+            messageInput.value = '';
+        }
+    </script>
+</body>
+</html>

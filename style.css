@@ -65,7 +65,7 @@ p {
     transition: background-color 0.3s;
     text-decoration: none;
     box-shadow: 1px 1px 3px 1px black;
-    margin:20px;
+    padding: 5px;
    
 }
 
@@ -140,7 +140,7 @@ p {
         transform: translateY(-80vh) translateX(-5px) rotate(-45deg);
     }
     100% {
-        transform: translateY(-100vh) translateX(0) rotate(-45deg);
+        transform: translateY(-150vh) translateX(0) rotate(-45deg);
     }
 }
 
@@ -327,7 +327,7 @@ p {
                 }
     
        .clock{
-            display: flex;
+            display: flex ;
             padding: 30px;
             margin : 20px auto;
             width: 160px;
@@ -335,9 +335,10 @@ p {
             border-radius: 5px;
             font-size: xx-large;
             align-items:center;
-            
-            
             box-shadow: 1px 1px 3px 1px black ;
+            
+            
+            
 
 
        }
@@ -347,24 +348,86 @@ p {
         top: 50px;
         right: 5px;
     }
-        
+        #name {
+            padding: 3px;
+        }
            
+     .submitbutton {
+    padding: 10px;
+    margin-top: 10px;
+    color: palevioletred;
+    background-color: #3d475288;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+     }
 
+     .yourname{
+      
+        font-size: xx-large;
+     }
+    
+     .myname {
+
+        color: palevioletred;
+        z-index: 999 ;
+        font-size: x-large;
+        display: block;
+        position: absolute;
+     }
+
+     .timer {
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+        width: 400px;
+        margin: auto;
+        background: linear-gradient(135deg, #000000 0%, #4d0000 10%, #800000 20%, #b30000 30%, #ff4d4d 40%, #ff8080 50%, #bfbfbf 60%, #7f7f7f 70%, #4d4d4d 80%, #000000 90%);
+        box-shadow: 0 0 10px rgba(0, 68, 255, 0.5);
+        transition: box-shadow 0.3s ease; 
+        animation: shadow-animation alternate linear infinite 7s
+        
+    }
 
     
-   
+    @keyframes shadow-animation {
+        0% { 
+            background-position: 0% 50%; 
+            transform: scale(1); 
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+          }
+          25% {
+            background-position: 50% 50%;
+            transform: scale(1.05); 
+            box-shadow: 0 0 40px rgba(255, 0, 0, 1);
+          }
+          50% { 
+            background-position: 100% 50%; 
+            transform: scale(1);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); 
+          }
+          75% { 
+            background-position: 50% 50%;
+            transform: scale(1.05); 
+            box-shadow: 0 0 40px rgba(255, 0, 0, 1);
+          }
+          100% { 
+            background-position: 0% 50%;
+            transform: scale(1); 
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+      
+          }
+        }
 
-   
-   
-
-
-
-
-
-
-
+        @media (max-width:600px) {
+            .timer {
+                width: 200px;
+                margin-top: 10px;
+                font-size: 20px;
+            }
+        }
+        
+        
 
     
-
-    
-

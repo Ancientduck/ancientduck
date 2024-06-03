@@ -42,8 +42,6 @@ function sound() {
     
 }
 
-
-
 function tommy2 () {
 
     var element1 = document.getElementById('Tommy').style.display='none'
@@ -76,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 {
 document.addEventListener('DOMContentLoaded' , () => {
+    
     const musicbutton = document.getElementById('musicbuttonON');
     const audio = document.getElementById('music');
     const musicbuttonoff = document.getElementById('musicbuttonOFF')
@@ -114,5 +113,60 @@ document.addEventListener('DOMContentLoaded' , () => {
 setInterval(updateClock, 1000);
 updateClock(); 
 }
+//*  this is the function for name
+
+document.addEventListener('DOMContentLoaded' , () => {
+
+const name = document.getElementById('username');
+const submitbtn = document.getElementById('submitbtn');
+const sayname  = document.getElementById('sayname');
+const audio   = document.getElementById('enterVC')
+
+
+submitbtn.onclick = function() {
+    const name = document.getElementById('username').value;
+
+        const audio = document.getElementById('enterVC');
+        audio.currentTime = 0;
+        audio.play();
+   
+    if (!name) {
+
+        alert (`Please, type your name`)
+
+   }
+   
+    else {
+        sayname.textContent = `hello, ${name}`}
+
+        setTimeout( () => {
+            sayname.textContent = ``
+        } , 2000) 
+        
+
+};
+
+
+})  
+
+document.addEventListener ('DOMContentLoaded' , () => {
+
+    const starttime = performance.now ();
+
+    function updatetime() {
+
+     const thetime = performance.now() - starttime ;
+     const seconds = Math.floor(thetime/1000);  
+     const minutes = Math.floor(seconds/60);
+     const hours = Math.floor(minutes/60);
+     
+     const thetimer = `${hours} hours | ${minutes % 60} minutes | ${seconds % 60} seconds`;
+
+        document.getElementById('timer').textContent = thetimer;
+    }
+
+setInterval(updatetime, 1000);
+updatetime();
+});
 
 
