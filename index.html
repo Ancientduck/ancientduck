@@ -81,6 +81,35 @@
             </div>
                 
             </p>
+            <button id="calbtn" class="button">show Calculator</button>
+            <button id="uncalbtn" class="button">hide Calculator</button>
+            <div class="wrap" id="wrap"> 
+        <div class="calcontainer">
+        
+            <input class="displaybox" readonly>
+            <div id="keys">
+            <button class="skey" onclick="reset()">C</button>
+            <button onclick="tap('7')">7</button>
+            <button onclick="tap('8')">8</button>
+            <button onclick="tap('9')">9</button>
+            <button class="skey" onclick="tap('+')">+</button>
+            <button onclick="tap('6')">6</button>
+            <button onclick="tap('5')">5</button>
+            <button onclick="tap('4')">4</button>
+            <button class="skey" onclick="tap('-')">-</button>
+            <button onclick="tap('3')">3</button> 
+            <button onclick="tap('2')">2</button>
+            <button onclick="tap('1')">1</button>
+            <button class="skey"  onclick="tap('*')">x</button>
+            <button onclick="tap('0')">0</button>
+            <button onclick="tap('.')">.</button>
+            <button onclick="tap('/')">/</button>
+            <button class="skey" onclick="calculate()">=</button> 
+            <button id="backbtn" class="backbtn" onclick="backspace()">del</button>
+            </div>
+        </div>
+        </div>
+        
             <div>
                 <button id="button" class="button" type="button" onclick="tommy()">press me</button>
                 <img src="things/Tommy.png" id="Tommy" class="Tommy">
@@ -108,4 +137,3 @@
      <script src="script.js"></script>
 </body>
 </html>
-

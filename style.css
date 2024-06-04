@@ -87,6 +87,7 @@ p {
     filter: blur(1.5px);
     overflow: visible; 
     position:sticky;
+    z-index: 999;
 }
 @media (max-width: 769px) {
     .rocket {
@@ -430,4 +431,99 @@ p {
         
         
 
-    
+        body {
+            background-image: url(/background\ image.jpg);
+        }
+        
+        #keys {
+            display: grid;
+            grid-template-columns: repeat( 4 , 1fr);
+               
+            
+        
+        }
+        #keys button {
+            font-size: 2rem;
+            padding: 31px;
+            background-color: black ;
+            color: white
+            
+        }
+        
+        .displaybox {
+            width: 370px;
+            height: 70px;
+            font-size: 2rem;
+            background-image: url(/stars.jpeg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border: none;
+            
+        }
+        
+        .calcontainer{
+           flex-direction: column;
+           box-shadow: 1px 1px 4px 1px black;
+           background-image: url(/stars.jpeg);
+
+           
+        }
+        
+        @media (max-width:600px) {  .wrap{
+        
+            align-items: center;
+            justify-content: center;
+            display: none;
+            box-shadow: 1px 1px 10px 1px rgb(38, 0, 255);
+            width: 350px;
+            position:relative;
+            transform: scale(0.8);
+            
+            
+            
+      }
+        }
+         
+        @media (min-width:600px) {    
+            .wrap{
+        
+            align-items: center;
+            justify-content: center;
+            display: none;
+            box-shadow: 1px 1px 10px 1px rgb(38, 0, 255);
+            width: 350px;
+            position:relative;
+            left: 700px;
+            
+    }
+            
+            
+        }
+       
+         
+        .skey  {
+            background-color: rgb(255, 217, 0) !important;
+            color: black !important;
+        
+        }
+        
+        #keys :hover {
+            background-color: rgba(196, 180, 180, 0.288);
+        }
+        
+        .skey:hover {
+            background-color: rgb(218, 165, 32, 0.288) !important;
+        }
+        
+        #uncalbtn {
+            display: none;
+            float: right;
+        }
+        #calbtn {
+            float: right;
+        }
+        
+        .backbtn:hover {
+            background-color: rgb(255, 0, 0) !important;
+        }

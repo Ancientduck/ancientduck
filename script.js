@@ -169,4 +169,63 @@ setInterval(updatetime, 1000);
 updatetime();
 });
 
+//* calculator
+const display = document.querySelector('.displaybox');
+
+function tap(input) {
+    display.value += input
+
+
+}
+
+function calculate() {
+    try{
+    display.value = eval(display.value);
+    }
+    catch(ERROR) {
+        display.value = 'Syntax error,try Chat GPT'
+    }
+}
+
+function backspace() {
+    display.value = display.value.slice(0,-1)
+}
+
+function reset() {
+
+    display.value = "" ;
+}
+
+const calbtn = document.getElementById('calbtn')
+const cal = document.getElementById('wrap')
+const uncalbtn = document.getElementById('uncalbtn');
+const audio = document.getElementById('enterVC') 
+
+ calbtn.addEventListener('click' , function () {
+    
+    audio.currentTime = 0;
+    audio.play()
+    cal.style.display="block" ;
+    cal.style.display='flex' ;
+    uncalbtn.style.display='block';
+    calbtn.style.display='none'
+      
+ })
+{
+const uncalbtn = document.getElementById('uncalbtn')
+const uncal = document.getElementById('wrap')
+const calbtn = document.getElementById('calbtn')
+
+uncalbtn.addEventListener('click', function() {
+      audio.currentTime = 0;
+      audio.play()
+      uncal.style.display='none'
+      calbtn.style.display='block'
+      uncalbtn.style.display='none'
+
+        
+})
+
+}
+
 
