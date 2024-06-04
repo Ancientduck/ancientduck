@@ -430,11 +430,6 @@ p {
         }
         
         
-
-        body {
-            background-image: url(/background\ image.jpg);
-        }
-        
         #keys {
             display: grid;
             grid-template-columns: repeat( 4 , 1fr);
@@ -454,7 +449,7 @@ p {
             width: 370px;
             height: 70px;
             font-size: 2rem;
-            background-image: url(/stars.jpeg);
+            background-image: url(stars.jpeg);
             background-size: cover;
             background-position: center;
             color: white;
@@ -465,7 +460,7 @@ p {
         .calcontainer{
            flex-direction: column;
            box-shadow: 1px 1px 4px 1px black;
-           background-image: url(/stars.jpeg);
+           background-image: url(stars.jpeg);
 
            
         }
