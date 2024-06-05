@@ -286,10 +286,10 @@ p {
        .Tommy{
             display: none;
             position:absolute;
-            top: 550px;
+            bottom: -350px;
             width:200px;
             height: 200px;
-            right: 20px;
+            right: 130px;
             
         }
     }
