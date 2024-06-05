@@ -1,5 +1,5 @@
 body {
-    background-image: url(/things/webbackground.jpg);
+    background-image: url(webbackground.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -145,7 +145,7 @@ p {
         transform: translateY(-80vh) translateX(-5px) rotate(-45deg);
     }
     100% {
-        transform: translateY(-150vh) translateX(0) rotate(-45deg);
+        transform: translateY(-250vh) translateX(0) rotate(-45deg);
     }
 }
 
@@ -543,7 +543,7 @@ p {
     justify-content: center;
     align-items: center;
     box-shadow: 1px 1px 69px 1px rgb(0, 0, 0);
-    background-image: url(/things/clockwallpaper.jpg);
+    background-image: url(clockwallpaper.jpg);
     background-size: cover;
     background-position: -15px ;
     
