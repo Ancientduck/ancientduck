@@ -1,5 +1,5 @@
 body {
-    background-image: url(things/webbackground.jpg);
+    background-image: url(/things/webbackground.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -34,6 +34,8 @@ p {
     width: 100%;
     max-width: 480px;
     height: auto;
+    overflow: visible;
+    
 }
 @font-face {
     font-family: "pricedown";
