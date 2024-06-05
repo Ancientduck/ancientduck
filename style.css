@@ -265,7 +265,7 @@ p {
      
 
     }
-    @media (max-width: 600px) {
+    @media (max-width: 1024px) {
         
         .dropbackground {
             background-image: url(VICECITY.jpg);
@@ -282,14 +282,14 @@ p {
         button:hover {
              background-color: green;
         }
-       @media (max-width:600px) {
+       @media (max-width:1024px) {
        .Tommy{
             display: none;
-            position:absolute;
-            bottom: -350px;
-            width:200px;
-            height: 200px;
-            right: 130px;
+            position:relative;
+            transform: scale(0.9) translateX(-100px);
+            
+           
+        
             
         }
     }
@@ -304,12 +304,13 @@ p {
             transition: background-color 0.3s;
         }
 
-        @media (min-width:600px) {
+        @media (min-width:1024px) {
              .Tommy {
 
-                display: none;
+                display: none;          
                 position: absolute;
                 left: 1px;
+                
 
              }
 
@@ -421,7 +422,7 @@ p {
           }
         }
 
-        @media (max-width:600px) {
+        @media (max-width:1024px) {
             .timer {
                 width: 200px;
                 margin-top: 10px;
@@ -465,22 +466,18 @@ p {
            
         }
         
-        @media (max-width:600px) {  .wrap{
+       
+            @media (max-width: 1024px) {
+                .wrap {
+                    transform: scale(0.6);
+                    width: 100px;
+                    display: none;
+                }    
+                 
+            }
         
-            align-items: center;
-            justify-content: center;
-            display: none;
-            box-shadow: 1px 1px 10px 1px rgb(38, 0, 255);
-            width: 350px;
-            position:relative;
-            transform: scale(0.8);
-            
-            
-            
-      }
-        }
          
-        @media (min-width:600px) {    
+        @media (min-width:1024px) {    
             .wrap{
         
             align-items: center;
