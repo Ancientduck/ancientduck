@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded' , () => {
       const timecode = time.toLocaleTimeString('en-US', { hour: 'numeric', minute:'numeric', second:"numeric"  } )
     
 
-    const clock = document.getElementById ('clock');
+    const clock = document.getElementById ('Dclock');
     clock.textContent = timecode;
    
 }
@@ -227,5 +227,29 @@ uncalbtn.addEventListener('click', function() {
 })
 
 }
+
+function Aclock() {
+    const now = new Date()
+ //getting time part
+    const second = now.getSeconds()
+    const minute = now.getMinutes()
+    const hour = now.getHours()
+
+// calculating the degree part
+    const secondangle = second * 6 ;
+    const minuteangle = (minute * 6) + (second * 0.1);
+    const hourangle =  (hour * 30) + (minute * 0.4);
+
+
+    //rotate part
+
+    document.getElementById('second-hand').style.transform = `rotate(${secondangle}deg)`;
+    document.getElementById('minute-hand').style.transform = `rotate(${minuteangle}deg)`;
+    document.getElementById('hour-hand').style.transform = `rotate(${hourangle}deg)`;
+
+}
+    Aclock();
+
+    setInterval(Aclock, 1000);
 
 
