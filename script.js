@@ -25,7 +25,7 @@ function displaydate() {
     }, 5000);
 }
 function tommy() {
-   var element1 = document.getElementById('Tommy').style.display='block';
+   var element1 = document.getElementById('Tommy').style.display='flex';
    var element2 = document.getElementById('off').style.display='block';
 
     var audio = document.getElementById('enterVC');
