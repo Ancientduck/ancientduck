@@ -117,35 +117,146 @@ updateClock();
 
 document.addEventListener('DOMContentLoaded' , () => {
 
-const name = document.getElementById('username');
-const submitbtn = document.getElementById('submitbtn');
-const sayname  = document.getElementById('sayname');
-const audio   = document.getElementById('enterVC')
-
-
-submitbtn.onclick = function() {
-    const name = document.getElementById('username').value;
-
-        const audio = document.getElementById('enterVC');
-        audio.currentTime = 0;
-        audio.play();
-   
-    if (!name) {
-
-        alert (`Please, type your name`)
-
-   }
-   
-    else {
-        sayname.textContent = `hello, ${name}`}
-
-        setTimeout( () => {
-            sayname.textContent = ``
-        } , 2000) 
+    let submitbtn = document.getElementById ('submitbtn')
+    let sayname = document.getElementById('sayname')
+    let audio = document.getElementById('enterVC')
+    let mosarof = document.getElementById('mosarof')
+    let hysam = document.getElementById('hysam')
+    let vaiya = document.getElementById('vaiya')
+    let vabi = document.getElementById('vabi')
+    let hamim = document.getElementById('hamim')
+    let turjo = document.getElementById('turjo')
+    let apurbo = document.getElementById('apurbo')
+    
+    submitbtn.addEventListener('click' , () => {
+    
+        let name = document.getElementById('username').value
+        let quotes = [
+            "The art of living is more like wrestling than dancing. - Marcus Aurelius",
+            "The soul becomes dyed with the color of its thoughts. - Marcus Aurelius",
+            "The journey of a thousand miles begins with one step. - Lao Tzu ",
+            "The best way to predict your future is to create it. - Abraham Lincoln",
+            "Life is inherently uncertain. Embrace the uncertainty, and you will find endless possibilities. - unknown",
+            "The only person you are destined to become is the person you decide to be. - Ralph Waldo Emerson",
+            "Don't stop when you are tired, stop when you are done - David Goggins",
+            "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it. - Jordan Belfort",
+            "Before you take the advice, understand the person",
+            "The mind is the most powerful tool you have; it can work for you or against you. Train it well - David Goggins",
+            "Your body is the reflection of your mindset",
+            "Be comfortable being uncomfortable",
+            "Tommy Vercetti, remember the name. - Tommy Vercetti from vice city"
+            
+        ];
+          let generatequote = Math.floor(Math.random() * quotes.length)
+          let gettingquotes = quotes[generatequote]
+          let lname = name.toLowerCase();
+          
+          audio.play()
+        audio.currentTime = 0 ;
+          
+        apurbo.style.display = 'none';
+        vaiya.style.display = 'none';
+        vabi.style.display = 'none';
+        hamim.style.display = 'none';
+        hysam.style.display = 'none';
+        turjo.style.display = 'none';
+        mosarof.style.display = 'none';
+    
+        if(!name) {
+              alert(`type name`)
+        }
+        else if(lname === 'apurbo') {
+        sayname.innerHTML = `Greetings, Apurbo Da Vinci`
+        apurbo.style.display='block'
+          }
+         else if(lname === 'oishorjo') {
+            sayname.innerHTML = `heeelo vaiya`
+            showquote.textContent = `A quote for you , "${gettingquotes}"`
+            vaiya.style.display='block'
+            
+         }
+    
+         else if(lname === 'mou') {
+                sayname.innerHTML = `heeeeello vabi` 
+                showquote.textContent = `A quote for you , "${gettingquotes}"`
+                vabi.style.display='block'
+         }
+         
+         else if(lname === 'hamim') {
+            sayname.innerHTML = `BOLOD`
+            showquote.textContent = `A quote for you , "being stupid has a new meaning because of you"`
+            hamim.style.display='block'
+              }
+              else if(lname === 'hisam') {
+                sayname.innerHTML = `My nigga`
+                showquote.textContent = `A quote for you , "Do 100 pushups"`
+                hysam.style.display='block'
+                  }
+                  else if(lname === 'hysam') {
+                    sayname.innerHTML = `My nigga`
+                    showquote.textContent = `A quote for you , "do 200 pushups"`
+                    hysam.style.display='block'
+                      }
+                      else if(lname === 'turjo') {
+                        sayname.innerHTML = `Yo dude, `
+                        showquote.textContent = `A quote for you , "ghurte jai ekdin dude :)"`
+                        turjo.style.display='block'
+                          } 
+                          else if(lname === 'tommy') {
+                            sayname.innerHTML = `Tommy`
+                            showquote.textContent = `Remember that name`
+                              } 
+                              else if(lname === 'tommy vercetti') {
+                                sayname.innerHTML = `Tommy vercetti`
+                                showquote.textContent = `Remember that name`
+                                  }
+                                   
+                                  else if(lname === 'mosharrof sir') {
+                                    sayname.innerHTML = `Math homework`
+                                    showquote.textContent = `10,000 ta mcq kathai kore asbi sobai`
+                                    mosarof.style.display='block'
+                                      } 
+                                      else if(lname === 'mosarrof') {
+                                        sayname.innerHTML = `Math homework`
+                                        showquote.textContent = `10,000 ta mcq kathai kore asbi sobai`
+                                        mosarof.style.display='block'
+                                          
+                                          } 
+                                          else if(lname === 'mosarof') {
+                                            sayname.innerHTML = `Math homework`
+                                            showquote.textContent = `10,000 ta mcq kathai kore asbi sobai`
+                                            mosarof.style.display='block'
+                                              } 
+                                              else if(lname === 'mosarof sir') {
+                                                sayname.innerHTML = `Math homework`
+                                                showquote.textContent = `10,000 ta mcq kathai kore asbi sobai`
+                                                mosarof.style.display='block'
+                                                  } 
+                                        
+                                          
+                                    
+                                
+                                        
         
+        else {
+            sayname.innerHTML =  `hello ${name} ! <br> A quote for you ,`
+            showquote.textContent = `"${gettingquotes}"`
+        }
 
-};
-
+        
+        
+       
+        
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            sayname.textContent = '';
+            showquote.textContent = '';
+        }, 2000);
+    
+        })
+    
+    
+       
 
 })  
 
