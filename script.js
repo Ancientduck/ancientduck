@@ -80,9 +80,10 @@ document.addEventListener('DOMContentLoaded' , () => {
     const musicbuttonoff = document.getElementById('musicbuttonOFF')
     musicbutton.addEventListener('click' , () => {
         audio.play();
-        audio.volume = 0.5;
+        audio.volume = 0.4;
         musicbuttonoff.style.display="block" ;
         musicbutton.style.display="none";
+
     
     })
     
@@ -94,7 +95,10 @@ document.addEventListener('DOMContentLoaded' , () => {
         musicbutton.style.display="block";
     })
 
-    
+    audio.addEventListener('ended' , () => {
+        musicbutton.style.display="block"
+        musicbuttonoff.style.display="none"
+    })
 })
 }
 
@@ -127,146 +131,143 @@ document.addEventListener('DOMContentLoaded' , () => {
     let hamim = document.getElementById('hamim')
     let turjo = document.getElementById('turjo')
     let apurbo = document.getElementById('apurbo')
+    let nonameaudio = document.getElementById('exitVC')
+    let gigachad = document.getElementById('gigachad')
     
-    submitbtn.addEventListener('click' , () => {
+   let thesubmit = () => {
     
-        let name = document.getElementById('username').value
-        let quotes = [
-            "The art of living is more like wrestling than dancing. - Marcus Aurelius",
-            "The soul becomes dyed with the color of its thoughts. - Marcus Aurelius",
-            "The journey of a thousand miles begins with one step. - Lao Tzu ",
-            "The best way to predict your future is to create it. - Abraham Lincoln",
-            "Life is inherently uncertain. Embrace the uncertainty, and you will find endless possibilities. - unknown",
-            "The only person you are destined to become is the person you decide to be. - Ralph Waldo Emerson",
-            "Don't stop when you are tired, stop when you are done - David Goggins",
-            "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it. - Jordan Belfort",
-            "Before you take the advice, understand the person",
-            "The mind is the most powerful tool you have; it can work for you or against you. Train it well - David Goggins",
-            "Your body is the reflection of your mindset",
-            "Be comfortable being uncomfortable",
-            "Tommy Vercetti, remember the name. - Tommy Vercetti from vice city"
-            
-        ];
-          let generatequote = Math.floor(Math.random() * quotes.length)
-          let gettingquotes = quotes[generatequote]
-          let lname = name.toLowerCase();
+    let name = document.getElementById('username').value
+    let quotes = [
+        "The art of living is more like wrestling than dancing. - Marcus Aurelius",
+        "The soul becomes dyed with the color of its thoughts. - Marcus Aurelius",
+        "The journey of a thousand miles begins with one step. - Lao Tzu ",
+        "The best way to predict your future is to create it. - Abraham Lincoln",
+        "Life is inherently uncertain. Embrace the uncertainty, and you will find endless possibilities. - unknown",
+        "The only person you are destined to become is the person you decide to be. - Ralph Waldo Emerson",
+        "Don't stop when you are tired, stop when you are done - David Goggins",
+        "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it. - Jordan Belfort",
+        "Before you take the advice, understand the person",
+        "The mind is the most powerful tool you have; it can work for you or against you. Train it well - David Goggins",
+        "Your body is the reflection of your mindset",
+        "Be comfortable being uncomfortable",
+        
+    ];
+      let generatequote = Math.floor(Math.random() * quotes.length)
+      let gettingquotes = quotes[generatequote]
+      let lname = name.toLowerCase();
+      
+      audio.play()
+    audio.currentTime = 0 ;
+      
+    apurbo.style.display = 'none';
+    vaiya.style.display = 'none';
+    vabi.style.display = 'none';
+    hamim.style.display = 'none';
+    hysam.style.display = 'none';
+    turjo.style.display = 'none';
+    mosarof.style.display = 'none';
+    gigachad.pause()
+
+    if(name === '') {
+          nonameaudio.play()
+          nonameaudio.currentTime = 0;
+          sayname.innerHTML = `You have a name, right?`
+          showquote.style.display="none"
+    }
+    else if(lname === 'apurbo' || lname === 'vinci' || lname === 'apurbo da vinci' || lname === `prachurjo`) {
+    sayname.innerHTML = `Greetings, Apurbo Da Vinci. <br> Welcome to your website`
+    apurbo.style.display='block'
+    gigachad.currentTime = 0;
+    gigachad.play()
+    gigachad.volume = 0.3 ;
+    showquote.innerHTML="Apurbo Da Vinci";
+      }
+     else {
+        showquote.style.display="block"
+
           
-          audio.play()
-        audio.currentTime = 0 ;
-          
-        apurbo.style.display = 'none';
-        vaiya.style.display = 'none';
-        vabi.style.display = 'none';
-        hamim.style.display = 'none';
-        hysam.style.display = 'none';
-        turjo.style.display = 'none';
-        mosarof.style.display = 'none';
-    
-        if(!name) {
-              alert(`type name`)
-        }
-        else if(lname === 'apurbo') {
-        sayname.innerHTML = `Greetings, Apurbo Da Vinci`
-        apurbo.style.display='block'
-          }
-         else if(lname === 'oishorjo') {
-            sayname.innerHTML = `heeelo vaiya`
+      if(lname === 'oishorjo') {
+        sayname.innerHTML = `heeelo vaiya`
+        vaiya.style.display='block'
+        showquote.textContent = `A quote for you , "${gettingquotes}"`
+        
+        
+     }
+
+     else if(lname === 'mou') {
+            sayname.innerHTML = `heeeeello vabi` 
             showquote.textContent = `A quote for you , "${gettingquotes}"`
-            vaiya.style.display='block'
-            
-         }
-    
-         else if(lname === 'mou') {
-                sayname.innerHTML = `heeeeello vabi` 
-                showquote.textContent = `A quote for you , "${gettingquotes}"`
-                vabi.style.display='block'
-         }
-         
-         else if(lname === 'hamim') {
-            sayname.innerHTML = `BOLOD`
-            showquote.textContent = `A quote for you , "being stupid has a new meaning because of you"`
-            hamim.style.display='block'
+            vabi.style.display='block'
+     }
+     
+     else if(lname === 'hamim') {
+        sayname.innerHTML = `BOLOD`
+        showquote.textContent = `A quote for you , "being stupid has a new meaning because of you"`
+        hamim.style.display='block'
+          }
+          else if(lname === 'hisam') {
+            sayname.innerHTML = `My nigga`
+            showquote.textContent = `A quote for you , "Do 100 pushups"`
+            hysam.style.display='block'
               }
-              else if(lname === 'hisam') {
+              else if(lname === 'hysam') {
                 sayname.innerHTML = `My nigga`
-                showquote.textContent = `A quote for you , "Do 100 pushups"`
+                showquote.textContent = `A quote for you , "do 200 pushups"`
                 hysam.style.display='block'
                   }
-                  else if(lname === 'hysam') {
-                    sayname.innerHTML = `My nigga`
-                    showquote.textContent = `A quote for you , "do 200 pushups"`
-                    hysam.style.display='block'
-                      }
-                      else if(lname === 'turjo') {
-                        sayname.innerHTML = `Yo dude, `
-                        showquote.textContent = `A quote for you , "ghurte jai ekdin dude :)"`
-                        turjo.style.display='block'
-                          } 
-                          else if(lname === 'tommy') {
-                            sayname.innerHTML = `Tommy`
-                            showquote.textContent = `Remember that name`
-                              } 
-                              else if(lname === 'tommy vercetti') {
-                                sayname.innerHTML = `Tommy vercetti`
-                                showquote.textContent = `Remember that name`
-                                  }
-                                   
-                                  else if(lname === 'mosharrof sir') {
-                                    sayname.innerHTML = `Math homework`
-                                    showquote.textContent = `10,000 ta mcq kathai kore asbi sobai`
-                                    mosarof.style.display='block'
-                                      } 
-                                      else if(lname === 'mosarrof') {
-                                        sayname.innerHTML = `Math homework`
-                                        showquote.textContent = `10,000 ta mcq kathai kore asbi sobai`
-                                        mosarof.style.display='block'
-                                          
-                                          } 
-                                          else if(lname === 'mosarof') {
-                                            sayname.innerHTML = `Math homework`
-                                            showquote.textContent = `10,000 ta mcq kathai kore asbi sobai`
-                                            mosarof.style.display='block'
-                                              } 
-                                              else if(lname === 'mosarof sir') {
-                                                sayname.innerHTML = `Math homework`
-                                                showquote.textContent = `10,000 ta mcq kathai kore asbi sobai`
-                                                mosarof.style.display='block'
-                                                  } 
-                                        
-                                          
+                  else if(lname === 'turjo') {
+                    sayname.innerHTML = `Yo dude, `
+                    showquote.textContent = `ki obosta?`
+                    turjo.style.display='block'
+                      } 
+                      else if(lname === 'tommy' || lname === 'tommy vercetti') {
+                        sayname.innerHTML = `Tommy`
+                        showquote.textContent = `Remember that name`
+                          }    
+                        else if (lname === 'mosharrof sir' || lname === 'mosarrof' || lname === 'mosarof' || lname === 'mosarof sir') {
+                                  sayname.innerHTML = 'Math homework';
+                                  showquote.textContent = '10,000 ta mcq kathai kore asbi sobai';
+                                  mosarof.style.display = 'block';
+                              }
+                            
                                     
-                                
-                                        
-        
-        else {
-            sayname.innerHTML =  `hello ${name} ! <br> A quote for you ,`
-            showquote.textContent = `"${gettingquotes}"`
-        }
+    
+                          else {
+                                sayname.innerHTML =  `hello ${name} ! <br> A quote for you ,`
+                                showquote.textContent = `"${gettingquotes}"`
+                                }
 
-        
-        
-       
-        
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => {
-            sayname.textContent = '';
-            showquote.textContent = '';
-        }, 2000);
+
+
+                            }
     
-        })
-    
-    
-       
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+        sayname.textContent = '';
+        showquote.textContent = '';
+    }, 2000);
+   }
+
+   submitbtn.onclick = thesubmit
+
+   document.addEventListener('keydown' , (e) => {
+     
+    if(e.key === 'Enter') {
+        
+        thesubmit();
+    }
+   })
 
 })  
 
-document.addEventListener ('DOMContentLoaded' , () => {
 
-    const starttime = performance.now ();
+//* this is the function for the timer
+
+document.addEventListener ('DOMContentLoaded' , () => {
 
     function updatetime() {
 
-     const thetime = performance.now() - starttime ;
+     const thetime = performance.now() 
      const seconds = Math.floor(thetime/1000);  
      const minutes = Math.floor(seconds/60);
      const hours = Math.floor(minutes/60);
