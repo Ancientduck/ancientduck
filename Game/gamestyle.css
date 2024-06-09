@@ -1,0 +1,244 @@
+body {
+    background-image: url("gamebackimage.jpg");
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 100;
+    overflow: hidden;
+
+    
+}
+
+
+    
+
+.endscore {
+    
+    bottom: 20%;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    
+    /* Other styles */
+}
+.GAMEOVER{
+
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    
+    /* Other styles */
+}
+.game {
+    width: 1000px;
+    height: 200px;
+    border: 1px solid black;
+    margin: auto;
+    background-image: url("gamebackground.webp");
+    background-position: 0  290px;
+    overflow: hidden;
+    z-index: 999;
+    box-shadow: 1px 1px 4px 1px black;
+    animation: gamebackground 5s linear infinite;
+    
+
+    
+}
+
+@keyframes gamebackground {
+
+    0% {
+        background-position-x: 0%;
+    }
+    
+    100% {
+        background-position-x: -300% ;
+    }
+}
+
+
+#player {
+    width: 1%;
+    height: 7%;
+    background-color: red;
+    position: absolute;
+    bottom: 35.2%;
+    left: 30%;
+    will-change:bottom, left;
+}
+
+.jump {
+    animation: jump 500ms linear;
+}
+
+
+#block {
+    
+    background-color: blue;
+    height: 4%;
+    width: 1%;
+    position: absolute;
+    bottom: 35.3%;
+    left: 75.1%;
+    animation: go-left 2s linear infinite;
+}
+
+@keyframes jump {
+    0% {
+       bottom: 35.2% ; 
+    }
+    50% {
+           bottom: 43%;
+    }
+    60% {
+       bottom: 43% ;
+    }
+    70% {
+       bottom: 43% ;
+    }
+    100% {
+       bottom: 35.2% ;
+    }
+   
+}
+
+@keyframes go-left {
+      0% {
+        left: 75% ;
+      }
+      100% {
+        left: 24% ;
+      }
+}
+
+.GAMEOVER {
+    display: none;
+    font-size:  10em;
+    font-weight: 100;
+    height: 100vh;
+    position: absolute;
+    top: 30%;
+    color: rgb(128, 0, 0);
+    text-shadow: rgb(25, 7, 128);
+    font-weight: bold;
+    -webkit-text-stroke: 3px rgb(0, 0, 0);
+}
+
+
+
+.endscore {
+
+    display: none;
+    font-size:  10em;
+    font-weight: 100;
+    height: 100vh;
+    position: absolute;
+    top: 45%;
+    text-align: center;
+    color: rgb(128, 0, 0);
+    text-shadow: rgb(25, 7, 128);
+    font-weight: bold;
+    -webkit-text-stroke: 3px rgb(0, 0, 0);
+
+}
+
+
+#game-score
+{
+    background-color: green;
+    width: 1000px ;
+}
+
+@media(max-width: 1280px) {
+    
+
+    .game {
+        transform: scale(1);
+    }
+    #ingame-score-container {
+        position: absolute;
+        top: 29%;
+        left: -1%;
+        width: auto;
+    }
+    
+       
+    
+    #game-score {
+    color: rgb(37, 37, 148);
+    font-size: 4vw;
+    border: 1px solid black;
+    background-color: green;
+    display: inline-block;
+    
+}
+
+ #player{
+     bottom: 40% ;
+     width: 3%;
+    
+ }
+
+ #block
+ {
+    bottom: 40%;
+    width: 3%;
+    left: 100%;
+    animation: go-left 3s linear infinite;
+ }
+
+ @keyframes go-left {
+    0% {
+      left: 120% ;
+    }
+    100% {
+      left: -2% ;
+    }
+}
+@keyframes jump {
+    0% {
+       bottom: 40% ; 
+    }
+    50% {
+           bottom: 47%;
+    }
+    60% {
+       bottom: 47% ;
+    }
+    70% {
+       bottom: 47% ;
+    }
+    100% {
+       bottom: 40% ;
+    }
+   
+}
+#GAMEOVER  {
+
+    font-size: 4em;
+    position: absolute;
+    left: 5%;
+    top: 40%;
+    color: rgb(128, 0, 0);
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+}
+#endscore{
+    font-size: 4em;
+    position: absolute;
+    left: 15%;
+    top: 47%;
+    color: rgb(128, 0, 0);
+    text-shadow: rgb(25, 7, 128);
+    font-weight: bold;
+    -webkit-text-stroke: 3px rgb(0, 0, 0);
+}
+
+
+
+
+
+}
+

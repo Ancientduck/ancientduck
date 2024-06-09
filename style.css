@@ -60,6 +60,7 @@ p {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    
 }
 .button:hover {
     background-color: green;
@@ -263,6 +264,8 @@ p {
     padding: 5px;
     box-shadow: 1px 1px 4px 1px black;
     cursor: pointer;
+    
+    
    }
     .drop-content a:hover {
      color: blue;
@@ -280,7 +283,10 @@ p {
         button {
             font-weight:bold;
             color: palevioletred;
-            box-shadow: 1px 1px 3px 1px black;
+            box-shadow: 1px 1px 5px 1px black;
+            margin-bottom: auto;
+            padding: 5px;
+            
             
         }
         button:hover {
@@ -290,12 +296,10 @@ p {
        .Tommy{
             display: none;
             position:relative;
-            transform: scale(0.9) translateX(-100px);
-            
-           
-        
-            
+            transform: scale(0.9) translateX(-100px); 
         }
+            
+
     }
         .off{
 
@@ -637,4 +641,21 @@ b {
 .special-image {
     display: none;
     height: 300px;
+}
+
+.gamebutton {
+    margin-bottom: auto !important;
+    padding: 5px !important;
+    box-shadow: 1px 1px 4px 1px black !important;
+    cursor: pointer !important;
+    display: flex !important;
+    text-decoration: none !important;
+
+    
+    }   
+.gamebutton:hover {
+
+    background-color: green !important;
+    transition: 0.3s;
+    
 }

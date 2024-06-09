@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test1</title>
+    <link rel="stylesheet" href="gamestyle.css">
+    
+</head>
+<body>
+    <div id="thegame">
+    <div id="game-container" onclick="jump()">
+
+        <div id="ingame-score-container">
+            <div id="game-score" style="color: rgb(37, 37, 148); font-size: 5em; border: 1px solid black;">score: 0</div>
+        </div>
+    <div id="game" class="game"></div>
+        <div id="player"></div>
+        <div id="block"></div>
+    </div>
+    
+</div>
+<div class="endgame-score-container">
+<div id="GAMEOVER" class="GAMEOVER">GAMEOVER</div>
+<div id="endscore" class="endscore"></div>
+</div>
+
+<script src="gamescript.js"></script>    
+</body>
+</html>
+
+<!-- the positions has been fixed and all ready to do  
+     1.add the game start function 
+       remember. hide the game first. make the start button display the game
+      2. add music
+      3.add the restart button (Making the game visible again after death)
+      4.change the icons...thats gonna be painful (DO IT FIRST!!!)
+      5.add more obsticales, 
+      remember: use the variable list thing learned from making the name function 
+                hope it works
+                then add the random number generator to select which object to use
+                add animationa nd blocks for the newer stuff
+      -->      
