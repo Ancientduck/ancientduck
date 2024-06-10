@@ -22,7 +22,7 @@ body {
     top: 30%;
     left: 30%;
     
-    /* Other styles */
+    
 }
 .GAMEOVER{
 
@@ -30,7 +30,7 @@ body {
     top: 30%;
     left: 30%;
     
-    /* Other styles */
+   
 }
 .game {
     width: 52vw;
@@ -51,11 +51,11 @@ body {
 @keyframes gamebackground {
 
     0% {
-        background-position-x: 0%;
+        background-position-x: 0px;
     }
     
     100% {
-        background-position-x: -300% ;
+        background-position-x: -600px ;
     }
 }
 
@@ -152,98 +152,119 @@ body {
     width: 40vw ;
     
 }
-
-
-
-    @media(max-width: 1280px) {
-        .game {
-            width: 90vw; /* Adjusted for smaller screens */
-            height: 30vh;
-            background-image: url("gamebackground.webp");
-            
-            
-                                                           /* Adjusted for smaller screens */
-        }
-    
-        #ingame-score-container {
-            position: absolute;
-            top: 25%;
-            left: 5%;
-            width: 900vw;
-        }
-    
-        #game-score {
-            color: rgb(37, 37, 148);
-            font-size: 4vw; /* Adjusted for smaller screens */
-            border: 1px solid black;
-            background-color: green;
-            display: inline-block;
-            width: 90vw;
-        }
-    
-        #player {
-            bottom: 44vh;
-            width: 4vw; /* Adjusted size */
-            height: 10vh; /* Adjusted size */
-        }
-    
-        #block {
-            bottom: 44vh;
-            width: 4vw; /* Adjusted size */
-            height: 5vh; /* Adjusted size */
-            animation: go-left 3s linear infinite;
-        }
-
-        @keyframes gamebackground {
-
-            0% {
-                background-position-x: 0%;
-            }
-            
-            100% {
-                background-position-x: 370% ;
-            }
-        }
-    
-        @keyframes go-left {
-            0% {
-                left: 90vh;
-            }
-            100% {
-                left: 0vh;
-            }
-        }
-    
-        @keyframes jump {
-            0% {
-                bottom: 44vh;
-            }
-            50% {
-                bottom: 53vh;
-            }
-            100% {
-                bottom: 44vh;
-            }
-        }
-    
-        .GAMEOVER {
-            font-size: 4em; /* Adjusted size */
-            color: rgb(128, 0, 0);
-            -webkit-text-stroke: 2px rgb(0, 0, 0);
-            background-size: cover;
-            background-repeat: no-repeat;
-            left: 5%;
+@media (max-width: 1280px) {
+    .game {
+        width: 90vw;
+        height: 30vh;
+        background-position-y: top;
+        display: flex;
+        z-index: -1;
         
+    }
+
+    #ingame-score-container {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        width: 80vw;
+        font-size: large;
+        
+    }
+
+    #game-score {
+        color: rgb(37, 37, 148);
+        border: 1px solid black;
+        background-color: green;
+        width: 80vw;
+    }
+
+    #player {
+        width: 2vw; /* Adjusted size */
+        height: 7vh; /* Adjusted size */
+        bottom: 35.2%; /* Adjusted position to match the bottom line of the background */
+        left: 10%; /* Adjusted position */
+    }
+
+    #block {
+        width: 2vw; /* Adjusted size */
+        height: 4vh; /* Adjusted size */
+        bottom: 35.3%; /* Adjusted position to match the bottom line of the background */
+        left: 90%; /* Start position */
+        animation: go-left 3s linear infinite;
+    }
+
+    @keyframes gamebackground {
+        0% {
+            background-position-x: 0px;
         }
-    
-        .endscore {
-            font-size: 5em; /* Adjusted size */
-            position: absolute;
-            left: 15%;
-            top: 47%;
-            color: rgb(128, 0, 0);
-            text-shadow: rgb(25, 7, 128);
-            font-weight: bold;
-            -webkit-text-stroke: 3px rgb(0, 0, 0);
+        100% {
+            background-position-x: -600px;
         }
     }
+
+    @keyframes go-left {
+        0% {
+            left: 90vw;
+        }
+        100% {
+            left: -2vw;
+        }
+    }
+
+    @keyframes jump {
+        0% {
+            bottom: 35.2%; /* Adjusted starting position */
+        }
+        50% {
+            bottom: 42.2%; /* Adjusted jump height */
+        }
+        100% {
+            bottom: 35.2%; /* Adjusted ending position */
+        }
+    }
+
+    .GAMEOVER {
+        font-size: 4em; /* Adjusted size */
+        color: rgb(128, 0, 0);
+        -webkit-text-stroke: 2px rgb(0, 0, 0);
+        background-size: cover;
+        background-repeat: no-repeat;
+        left: 10%;
+        top: 30%;
+    }
+
+    .endscore {
+        font-size: 5em; /* Adjusted size */
+        position: absolute;
+        left: 15%;
+        top: 47%;
+        color: rgb(128, 0, 0);
+        text-shadow: rgb(25, 7, 128);
+        font-weight: bold;
+        -webkit-text-stroke: 3px rgb(0, 0, 0);
+    }
+}
+@media (min-width: 375px) and (max-height: 667px) {
+    
+        #ingame-score-container {
+            font-size: 0.9em;
+        }
+    
+        .game {
+            background-position-y: 45vh ;
+            animation: gamebackground infinite linear 3s;
+        }
+
+      
+@keyframes gamebackground {
+
+    0% {
+        background-position-x: 0px;
+    }
+    
+    100% {
+        background-position-x: -600px ;
+    }
+}
+    
+}

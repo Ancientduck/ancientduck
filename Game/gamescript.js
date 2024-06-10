@@ -73,6 +73,14 @@ function checkdeath() {
     else {
       document.body.style.backgroundPositionX = "-1000px";
     }
+    console.log(`Width: ${window.innerWidth}, Height: ${window.innerHeight}`);
+    if 
+    
+    (window.innerWidth === 422 && window.innerHeight === 751) {
+
+      document.body.style.backgroundPositionX = "-700px"
+
+    }
     
     
   }}
