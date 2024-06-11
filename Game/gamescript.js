@@ -65,6 +65,7 @@ function checkdeath() {
     document.body.style.backgroundImage = "url('Gameoverscreen.avif')"
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+    restartbutton.style.display = 'block';
 
     console.log(window.innerWidth);
     if(window.innerWidth >= 1024){
@@ -86,7 +87,17 @@ function checkdeath() {
   }}
   
  
-    
+  let startbutton = document.getElementById('startbutton');
+  let restartbutton = document.getElementById('restartbutton')
+  function startthegame() {
 
+    thegame.style.display='block';
+    startbutton.style.display='none';
+  }
 
+  function restartthegame() {
 
+    thegame.style.display = 'block'
+    restartbutton.style.display = 'none'
+    location.reload()
+  }

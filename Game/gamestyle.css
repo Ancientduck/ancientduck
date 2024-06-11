@@ -11,8 +11,49 @@ body {
 
     
 }
+#startbutton {
+
+    font-size: 3em;
+    background: linear-gradient(135deg, #b0bf58, #acba5b);
+    color: green;
+    border-radius: 3px;
+    box-shadow: black 1px 1px 3px 1px;
+}
+
+#startbutton:hover {
+
+    background-image:  linear-gradient(gold , yellow);
+}
+#startbutton:active {
+
+    background-image:  linear-gradient(gold , yellow);
+}
+#restartbutton {
+
+    display: none;
+    font-size: 3em;
+    background: linear-gradient(135deg, #bfb558, #76ba5b);
+    color: rgb(255, 0, 0);
+    border-radius: 3px;
+    box-shadow: black 1px 1px 3px 1px;
+    z-index: 999;
+    top: 20vH;
+    position: relative;
+}
+#restartbutton:hover {
+
+    background-image:  linear-gradient(rgb(255, 60, 0) , rgb(238, 255, 0));
+}
+#restartbutton:active {
+
+    background-image:  linear-gradient(rgb(140, 0, 255) , rgb(255, 136, 0));
+}
+#thegame {
+
+    display: none;
 
 
+}
     
 
 .endscore {
@@ -29,9 +70,12 @@ body {
     position: absolute;
     top: 30%;
     left: 30%;
+
+
     
    
 }
+
 .game {
     width: 52vw;
     height: 20vh;
