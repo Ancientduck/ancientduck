@@ -44,10 +44,12 @@ setInterval(() => {
   score()
 }  ,50)
 
-setinterval( () => {
+
+setInterval(() => {
 
 checkdeath()
-}, 50)
+
+} , 50)
 
 function checkdeath() {
 
