@@ -99,6 +99,7 @@ function checkdeath() {
 
     thegame.style.display='block';
     startbutton.style.display='none';
+    Displayscore = -1 ;
     
   }
 
