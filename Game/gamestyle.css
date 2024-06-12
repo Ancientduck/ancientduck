@@ -6,10 +6,25 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    z-index: 100;
+    z-index: 10;
     overflow: hidden;
+    
 
     
+}
+
+.sun {
+
+    background-image: url(sun.png);
+    z-index: 99;
+    height: 8%;
+    width: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 70%;
+    top: 45%;
+
 }
 #startbutton {
 
@@ -51,6 +66,7 @@ body {
 #thegame {
 
     display: none;
+    overflow: hidden;
 
 
 }
@@ -84,7 +100,7 @@ body {
     background-image: url("gamebackground.webp");
     background-position: 0  290px;
     overflow: hidden;
-    z-index: 999;
+    z-index: 9;
     box-shadow: 1px 1px 4px 1px black;
     animation: gamebackground 5s linear infinite;
     
@@ -105,9 +121,11 @@ body {
 
 
 #player {
-    width: 1%;
-    height: 7%;
-    background-color: red;
+    width: 2.5%;
+    height: 4%;
+    background-image: url(player.png);
+    background-repeat: no-repeat;
+    background-size: contain;
     position: absolute;
     bottom: 35.2%;
     left: 30%;
@@ -115,33 +133,23 @@ body {
 }
 
 .jump {
-    animation: jump 500ms linear;
+    animation: jump 700ms linear;
 }
 
 
-#block {
-    
-    background-color: blue;
-    height: 4%;
-    width: 1%;
-    position: absolute;
-    bottom: 35.3%;
-    left: 75.1%;
-    animation: go-left 2s linear infinite;
-}
 
 @keyframes jump {
     0% {
        bottom: 35.2% ; 
     }
     50% {
-           bottom: 43%;
+           bottom: 45%;
     }
     60% {
-       bottom: 43% ;
+       bottom: 45% ;
     }
     70% {
-       bottom: 43% ;
+       bottom: 45% ;
     }
     100% {
        bottom: 35.2% ;
@@ -194,6 +202,8 @@ body {
 {
     background-color: green;
     width: 40vw ;
+    z-index: -1;
+    
     
 }
 @media (max-width: 1280px) {
@@ -222,20 +232,6 @@ body {
         width: 80vw;
     }
 
-    #player {
-        width: 2vw; /* Adjusted size */
-        height: 7vh; /* Adjusted size */
-        bottom: 35.2%; /* Adjusted position to match the bottom line of the background */
-        left: 10%; /* Adjusted position */
-    }
-
-    #block {
-        width: 2vw; /* Adjusted size */
-        height: 4vh; /* Adjusted size */
-        bottom: 35.3%; /* Adjusted position to match the bottom line of the background */
-        left: 90%; /* Start position */
-        animation: go-left 3s linear infinite;
-    }
 
     @keyframes gamebackground {
         0% {
@@ -255,17 +251,6 @@ body {
         }
     }
 
-    @keyframes jump {
-        0% {
-            bottom: 35.2%; /* Adjusted starting position */
-        }
-        50% {
-            bottom: 42.2%; /* Adjusted jump height */
-        }
-        100% {
-            bottom: 35.2%; /* Adjusted ending position */
-        }
-    }
 
     .GAMEOVER {
         font-size: 4em; /* Adjusted size */
@@ -287,7 +272,19 @@ body {
         font-weight: bold;
         -webkit-text-stroke: 3px rgb(0, 0, 0);
     }
+    #player {
+        width: 6%;
+        height: 3%;
+        background-image: url(player.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        bottom: 35.2%;
+        left: 30%;
+        will-change:bottom, left;
+    }
 }
+
 @media (min-width: 375px) and (max-height: 667px) {
     
         #ingame-score-container {
@@ -310,5 +307,33 @@ body {
         background-position-x: -600px ;
     }
 }
+#player {
+    width: 6%;
+    height: 3%;
+    background-image: url(player.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: 35.2%;
+    left: 30%;
+    will-change:bottom, left;
+}
+}
+
+
+
+#block {
+    
+    background-color: blue;
+    height: 4%;
+    width: 1%;
+    position: absolute;
+    bottom: 35.3%;
+    left: 75.1%;
+    animation: go-left 2s linear infinite;
+}
+
+.block {
+
     
 }

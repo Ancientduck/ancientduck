@@ -12,7 +12,7 @@ function jump () {
   setTimeout(function() {
     
     player.classList.remove('jump')
-  } , 500)
+  } , 700)
 } }
 
 
@@ -23,7 +23,7 @@ if(space.key === " ") {
 
 }})
 
-setInterval(checkdeath , 50);
+
 
 
 Displayscore = -1;
@@ -93,6 +93,7 @@ function checkdeath() {
 
     thegame.style.display='block';
     startbutton.style.display='none';
+    
   }
 
   function restartthegame() {
