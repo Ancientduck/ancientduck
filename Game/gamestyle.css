@@ -298,8 +298,8 @@ body {
         -webkit-text-stroke: 3px rgb(0, 0, 0);
     }
     #player {
-        width: 6%;
-        height: 3%;
+        width: 6% !important;
+        height: 3% !important;
         background-image: url(player.png);
         background-repeat: no-repeat;
         background-size: contain;
