@@ -118,17 +118,6 @@ body {
 }
 
 
-#player {
-    width: 2.5%;
-    height: 4%;
-    background-image: url(player.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    bottom: 35.2%;
-    left: 30%;
-    
-}
 
 .jump {
     animation: jump 900ms linear;
@@ -365,7 +354,7 @@ body {
         }
 
 #player {
-    width: 6%;
+    width: 2.5%;
     height: 3%;
     background-image: url(player.png);
     background-repeat: no-repeat;

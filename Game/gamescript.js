@@ -88,7 +88,8 @@ function checkdeath() {
 let playerzone = player.getBoundingClientRect();
 let blockzones = [ 
   block.getBoundingClientRect(),
-  block2.getBoundingClientRect() 
+  block2.getBoundingClientRect(),
+  block3.getBoundingClientRect() 
 ];
 
   for(let blockzone of blockzones) {
