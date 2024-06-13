@@ -1,7 +1,8 @@
-let player = document.getElementById('player')
-let block = document.getElementById('block')
-let gameover = document.getElementById('GAMEOVER')
-let thegame = document.getElementById('thegame')
+let player = document.getElementById('player');
+let gameover = document.getElementById('GAMEOVER');
+let thegame = document.getElementById('thegame');
+
+
 
 
 function jump () {
@@ -12,7 +13,7 @@ function jump () {
   setTimeout(function() {
     
     player.classList.remove('jump')
-  } , 700)
+  } , 900)
 } }
 
 
@@ -47,16 +48,50 @@ setInterval(() => {
 
 setInterval(() => {
 
-checkdeath()
+  checkdeath()
+}, 50)
 
-} , 50)
+
+let [block , block2, block3 ] = ['block' , 'block2' , 'block3'].map(blocks => document.getElementById(blocks)) ;
+function fortheblocks() {
+  let blockzones = [ 
+     block,
+     block2,
+     block3
+
+  ];
+  
+let randomblock = Math.floor(Math.random() * blockzones.length);
+let theblock = blockzones[randomblock];
+
+
+if(theblock.classList != "movement") {
+
+theblock.style.display ="block";
+theblock.classList.add('movement');
+}
+
+
+if(theblock.classList.contains('movement')) {
+setTimeout(() => {
+
+theblock.style.display="none";
+theblock.classList.remove('movement');
+}, 2900)
+}
+
+}
 
 function checkdeath() {
 
-  let playerzone = player.getBoundingClientRect();
-  let blockzone = block.getBoundingClientRect();
-  
-  
+
+let playerzone = player.getBoundingClientRect();
+let blockzones = [ 
+  block.getBoundingClientRect(),
+  block2.getBoundingClientRect() 
+];
+
+  for(let blockzone of blockzones) {
   if (
     playerzone.right > blockzone.left &&
     playerzone.left < blockzone.right &&
@@ -64,6 +99,33 @@ function checkdeath() {
     playerzone.top < blockzone.bottom 
   ) { 
     
+    gameend();
+    
+  }}}
+
+ 
+  let startbutton = document.getElementById('startbutton');
+  let restartbutton = document.getElementById('restartbutton')
+  function startthegame() {
+
+    thegame.style.display='block';
+    startbutton.style.display='none';
+    Displayscore = -1 ;
+    fortheblocks()
+    fortheblockstime = setInterval(() => {
+      fortheblocks()
+    }, 3000);
+    
+  }
+
+  function restartthegame() {
+
+    thegame.style.display = 'block'
+    restartbutton.style.display = 'none'
+    location.reload()
+  }
+
+  function gameend() {
     gameover.style.display="flex"
     thegame.style.display="none"
     endscore.style.display='flex'
@@ -88,24 +150,6 @@ function checkdeath() {
       document.body.style.backgroundPositionX = "-700px"
 
     }
-    
-    
-  }}
+    clearInterval(fortheblockstime);
+  }
   
- 
-  let startbutton = document.getElementById('startbutton');
-  let restartbutton = document.getElementById('restartbutton')
-  function startthegame() {
-
-    thegame.style.display='block';
-    startbutton.style.display='none';
-    Displayscore = -1 ;
-    
-  }
-
-  function restartthegame() {
-
-    thegame.style.display = 'block'
-    restartbutton.style.display = 'none'
-    location.reload()
-  }
