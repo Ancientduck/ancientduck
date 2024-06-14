@@ -9,10 +9,51 @@ body {
     z-index: 10;
     overflow: hidden;
     
-    
-
-    
 }
+
+#block {
+    
+    background-image: url(blocks/tank-block.png);
+
+}
+
+#block2 {
+    background-image: url(blocks/sumo-block.png);
+}
+#block3 {
+    background-image: url(blocks/monster-block.png);
+}
+
+#block4 {
+    background-image: url(blocks/bat-block.gif);
+}
+
+#block5 {
+    background-image: url(blocks/death-block.png);
+}
+.block {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 5% !important;
+    width: 3% !important;
+    position: absolute;
+    bottom: 35.3%;
+    left: 75.1%;
+    display: none;
+}
+
+#player {
+    width: 2.5%;
+    height: 4%;
+    background-image: url(player.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: 35.2%;
+    left: 30%;
+    will-change:bottom, left;
+}
+
 
 .sun {
 
@@ -120,7 +161,7 @@ body {
 
 
 .jump {
-    animation: jump 900ms linear;
+    animation: jump 500ms linear;
 }
 
 
@@ -162,7 +203,7 @@ body {
 
 .movement{
 
-    animation: go-left 3s linear ;
+    animation: go-left 1.5s linear ;
 } 
 
 .GAMEOVER {
@@ -236,20 +277,6 @@ body {
         left: 75.1%;
     }
 
-    #block {
-    
-        background-image: url(blocks/tank-block.png);
-    }
-
-    #block2 {
-    
-        background-image: url(blocks/sumo-block.png);
-    }
-
-    #block3 {
-        background-image: url(blocks/monster-block.png);
-    }
-
     #game-score {
         color: rgb(37, 37, 148);
         border: 1px solid black;
@@ -317,28 +344,10 @@ body {
     }
 }
 
-@media (min-width: 375px) and (max-height: 667px) {
+@media (max-width: 400px) {
     
-        #ingame-score-container {
-            font-size: 0.9em;
-        }
-    
-        .game {
-            background-position-y: 45vh ;
-            animation: gamebackground infinite linear 3s;
-        }
-
-        #block {
-    
-            background-image: url(blocks/tank-block.png);  
-        }
-        #block2 {
-    
-            background-image: url(blocks/sumo-block.png);
-            
-        }
-        #block3 {
-            background-image: url(blocks/monster-block.png);
+        #game-score {
+            font-size: 0.6em;
         }
         .block {
 
@@ -353,57 +362,4 @@ body {
         }
         }
 
-#player {
-    width: 2.5%;
-    height: 3%;
-    background-image: url(player.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    bottom: 35.2%;
-    left: 30%;
-    will-change:bottom, left;
-}
-
-
-
-
-#block {
-    
-    background-image: url(blocks/tank-block.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 4%;
-    width: 3%;
-    position: absolute;
-    bottom: 35.3%;
-    left: 75.1%;
-    display: none;
-}
-
-#block2 {
-      
-    position: absolute;
-    background-image: url(blocks/sumo-block.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 5%;
-    width: 4%;
-    bottom: 35.3%;
-    left: 75.1%;
-    display: none;
-}
-
-#block3 {
-    position: absolute;
-    background-image: url(blocks/monster-block.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 5%;
-    width: 4%;
-    bottom: 35.3%;
-    left: 75.1%;
-    display: none;
-
-
-}
+       

@@ -1,9 +1,9 @@
 let player = document.getElementById('player');
 let gameover = document.getElementById('GAMEOVER');
 let thegame = document.getElementById('thegame');
-
-
-
+let movement = document.getElementById('movement')
+let blockzones = Array.from(document.querySelectorAll('.block'))
+let randomDelay;
 
 function jump () {
  
@@ -13,7 +13,7 @@ function jump () {
   setTimeout(function() {
     
     player.classList.remove('jump')
-  } , 900)
+  } , 500)
 } }
 
 
@@ -24,81 +24,74 @@ if(space.key === " ") {
 
 }})
 
-
-
-
 Displayscore = -1;
 function score() {
-  
-  
   
   let showscore = document.getElementById('game-score');
   Displayscore++
 
-  showscore.textContent = `score: ${Displayscore}`
-
-  
-  
+  showscore.textContent = `score: ${Displayscore}`  
 }
-setInterval(() => {
 
-  score()
-}  ,50)
-
-
-setInterval(() => {
-
-  checkdeath()
-}, 50)
-
-
-let [block , block2, block3 ] = ['block' , 'block2' , 'block3'].map(blocks => document.getElementById(blocks)) ;
 function fortheblocks() {
-  let blockzones = [ 
-     block,
-     block2,
-     block3
+ 
 
-  ];
-  
 let randomblock = Math.floor(Math.random() * blockzones.length);
 let theblock = blockzones[randomblock];
 
+if (!theblock.classList.contains("movement")) {
+  theblock.style.display = "block";
+  theblock.classList.add('movement');
 
-if(theblock.classList != "movement") {
+  theblock.addEventListener('animationend', function() {
+    theblock.style.display = 'none';
+    theblock.classList.remove('movement');
+  }, { once: true });
+}
+}
 
-theblock.style.display ="block";
-theblock.classList.add('movement');
+function addanotherblock() {
+
+  let randomDelay = Math.random() * 1000 + 500; // Random delay between 500ms and 1500ms
+ addanotherblocktime = setTimeout(() => {
+    fortheblocks();
+     addanotherblock(); // Schedule the next block
+  }, randomDelay);
 }
 
 
-if(theblock.classList.contains('movement')) {
-setTimeout(() => {
+let animationSpeed = 1.5; 
+const speedMultiplier = 0.95; 
 
-theblock.style.display="none";
-theblock.classList.remove('movement');
-}, 2900)
+function iamspeed() {
+    animationSpeed *= speedMultiplier; 
+    console.log(`Animation speed decreased to ${animationSpeed}s`);
+    
+ 
+    blockzones.forEach(block => {
+        block.style.animationDuration = animationSpeed + 's';
+    });
 }
 
-}
+
+setInterval(checkdeath , 50);
 
 function checkdeath() {
 
 
 let playerzone = player.getBoundingClientRect();
-let blockzones = [ 
-  block.getBoundingClientRect(),
-  block2.getBoundingClientRect(),
-  block3.getBoundingClientRect() 
-];
 
-  for(let blockzone of blockzones) {
+  for(let block of blockzones ) {
+    let blockzone = block.getBoundingClientRect();
+
   if (
     playerzone.right > blockzone.left &&
     playerzone.left < blockzone.right &&
     playerzone.bottom > blockzone.top &&
     playerzone.top < blockzone.bottom 
   ) { 
+
+    console.log(`lol`)
     
     gameend();
     
@@ -112,10 +105,15 @@ let blockzones = [
     thegame.style.display='block';
     startbutton.style.display='none';
     Displayscore = -1 ;
+
+    addanotherblock()
     fortheblocks()
-    fortheblockstime = setInterval(() => {
-      fortheblocks()
-    }, 3000);
+    forscore = setInterval(() => {
+
+      score()
+    }  ,50)
+    
+    setInterval(iamspeed, 10000);
     
   }
 
@@ -140,17 +138,22 @@ let blockzones = [
     if(window.innerWidth >= 1024){
     document.body.style.backgroundPositionX = "0px";
     }
-    else {
-      document.body.style.backgroundPositionX = "-1000px";
+     else if 
+    
+    (window.innerWidth <= 423) {
+
+      document.body.style.backgroundPositionX = "-760px"
+    }
+    else  {
+      document.body.style.backgroundPositionX = "-1060px";
     }
     console.log(`Width: ${window.innerWidth}, Height: ${window.innerHeight}`);
-    if 
-    
-    (window.innerWidth === 422 && window.innerHeight === 751) {
 
-      document.body.style.backgroundPositionX = "-700px"
-
-    }
     clearInterval(fortheblockstime);
+    clearInterval(forscore);
+    clearInterval(forcheckdeath);
+    clearInterval(iamspeed)
+
+    
   }
   
