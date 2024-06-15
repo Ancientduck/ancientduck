@@ -354,17 +354,7 @@ body {
         #game-score {
             font-size: 0.6em;
         }
-        .block {
-
-            background-size: contain;
-            background-repeat: no-repeat;
-            height: 5% !important;
-            width: 8% !important;
-            position: absolute;
-            bottom: 38.3%;
-            left: 75.1%;
-            
-        }
+      
         }
 
        
