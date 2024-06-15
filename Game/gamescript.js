@@ -3,7 +3,8 @@ let gameover = document.getElementById('GAMEOVER');
 let thegame = document.getElementById('thegame');
 let movement = document.getElementById('movement')
 let blockzones = Array.from(document.querySelectorAll('.block'))
-let randomDelay;
+let gigachadsound = document.getElementById('gigachadsound')
+let gigachadblock = document.getElementById('block10')
 
 function jump () {
  
@@ -48,14 +49,25 @@ if (!theblock.classList.contains("movement")) {
     theblock.classList.remove('movement');
   }, { once: true });
 }
+
+if(gigachadblock.style.display === "block") {
+
+  gigachadsound.play();
+  gigachadsound.volume = 0.3 ;
+
+  gigachadblock.addEventListener('animationend', function() {
+
+    gigachadsound.pause();
+  }  )
+}
 }
 
 function addanotherblock() {
 
-  let randomDelay = Math.random() * 1000 + 500; // Random delay between 500ms and 1500ms
+  let randomDelay = Math.random() * 1000 + 500; 
  addanotherblocktime = setTimeout(() => {
     fortheblocks();
-     addanotherblock(); // Schedule the next block
+     addanotherblock(); 
   }, randomDelay);
 }
 
@@ -74,8 +86,7 @@ function iamspeed() {
 }
 
 
-setInterval(checkdeath , 50);
-
+ 
 function checkdeath() {
 
 
@@ -108,18 +119,16 @@ let playerzone = player.getBoundingClientRect();
 
     addanotherblock()
     fortheblocks()
-    forscore = setInterval(() => {
-
-      score()
-    }  ,50)
-    
+    forscore = setInterval(score, 50)
     setInterval(iamspeed, 10000);
+    forcheckdeath = setInterval(checkdeath , 50);
+
     
   }
 
   function restartthegame() {
 
-    thegame.style.display = 'block'
+    thegame.style.display = 'none'
     restartbutton.style.display = 'none'
     location.reload()
   }
@@ -133,6 +142,7 @@ let playerzone = player.getBoundingClientRect();
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     restartbutton.style.display = 'block';
+    gigachadsound.pause();
 
     console.log(window.innerWidth);
     if(window.innerWidth >= 1024){
@@ -149,10 +159,10 @@ let playerzone = player.getBoundingClientRect();
     }
     console.log(`Width: ${window.innerWidth}, Height: ${window.innerHeight}`);
 
-    clearInterval(fortheblockstime);
     clearInterval(forscore);
     clearInterval(forcheckdeath);
-    clearInterval(iamspeed)
+    clearInterval(iamspeed);
+    clearTimeout(addanotherblocktime);
 
     
   }

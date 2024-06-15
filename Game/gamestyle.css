@@ -11,31 +11,22 @@ body {
     
 }
 
-#block {
-    
-    background-image: url(blocks/tank-block.png);
+#block {background-image: url(blocks/tank-block.png);}
+#block2 {background-image: url(blocks/sumo-block.png);}
+#block3 {background-image: url(blocks/monster-block.png);}
+#block4 {background-image: url(blocks/bat-block.gif);}
+#block5 {background-image: url(blocks/death-block.png);}
+#block6 {background-image: url(blocks/turjo-block.png);}
+#block7 {background-image: url(blocks/hysam-block.png);}
+#block8 {background-image: url(blocks/hamim-block.png);}
+#block9 {background-image: url(blocks/mosarof-block.png);}
+#block10{background-image: url(blocks/gigachad-block.png);}
 
-}
-
-#block2 {
-    background-image: url(blocks/sumo-block.png);
-}
-#block3 {
-    background-image: url(blocks/monster-block.png);
-}
-
-#block4 {
-    background-image: url(blocks/bat-block.gif);
-}
-
-#block5 {
-    background-image: url(blocks/death-block.png);
-}
 .block {
     background-size: contain;
     background-repeat: no-repeat;
-    height: 5% !important;
-    width: 3% !important;
+    height: 5% ;
+    width: 3% ;
     position: absolute;
     bottom: 35.3%;
     left: 75.1%;
@@ -270,12 +261,26 @@ body {
 
         background-size: contain;
         background-repeat: no-repeat;
-        height: 5% !important;
-        width: 8% !important;
+        height: 5% ;
+        width: 8% ;
         position: absolute;
-        bottom: 33.8% !important;
+        bottom: 33.8% ;
         left: 75.1%;
     }
+
+    #block10 {
+        height: 6%;
+    }
+    
+    #block6{
+        height: 8%;
+    }
+    #block7,
+    #block8 {
+
+        height: 7% ;
+    }
+    
 
     #game-score {
         color: rgb(37, 37, 148);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" onclick="jump()" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
 </head>
 <body>
     
+    <audio src="gigachad.mp3" type="audio/mpeg" id="gigachadsound"></audio>
     <button id="startbutton" onclick="startthegame()"> Start Game </button>
     <div id="thegame" onclick="jump()">
         <div class="sun" id="sun"></div>
@@ -19,11 +20,16 @@
         </div>
     <div id="game" class="game"></div>
         <div id="player"></div>
-        <div id="block" class="block"></div>
+        <div id="block"  class="block"></div>
         <div id="block2" class="block"></div>
         <div id="block3" class="block"></div>
         <div id="block4" class="block"></div>
         <div id="block5" class="block"></div>
+        <div id="block6" class="block"></div>
+        <div id="block7" class="block"></div>
+        <div id="block8" class="block"></div>
+        <div id="block9" class="block"></div>
+        <div id="block10" class="block"></div>
     </div>
     
 </div>
@@ -40,8 +46,8 @@
 <!-- #the positions has been fixed
      #start and restart button are all in place
      #icons done
-     #obsticale function done. can add as many as i want quickly
+     #obsticale function done. can add as many as i want quickly (add id and class inside a div and the picture inside the css file)
      #speed increased
      #blocks randomized and timed
       2. add music
-     
+      -->
