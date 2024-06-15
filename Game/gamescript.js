@@ -6,6 +6,7 @@ let blockzones = Array.from(document.querySelectorAll('.block'))
 let gigachadsound = document.getElementById('gigachadsound')
 let gigachadblock = document.getElementById('block10')
 
+
 function jump () {
  
   if(player.classList !="jump") {
@@ -113,7 +114,7 @@ let playerzone = player.getBoundingClientRect();
   let restartbutton = document.getElementById('restartbutton')
   function startthegame() {
 
-    thegame.style.display='block';
+    // thegame.style.display='block';
     startbutton.style.display='none';
     Displayscore = -1 ;
 
@@ -122,17 +123,13 @@ let playerzone = player.getBoundingClientRect();
     forscore = setInterval(score, 50)
     setInterval(iamspeed, 10000);
     forcheckdeath = setInterval(checkdeath , 50);
-
-    
   }
-
   function restartthegame() {
 
     thegame.style.display = 'none'
     restartbutton.style.display = 'none'
     location.reload()
   }
-
   function gameend() {
     gameover.style.display="flex"
     thegame.style.display="none"
@@ -162,8 +159,6 @@ let playerzone = player.getBoundingClientRect();
     clearInterval(forscore);
     clearInterval(forcheckdeath);
     clearInterval(iamspeed);
-    clearTimeout(addanotherblocktime);
-
-    
+    clearTimeout(addanotherblocktime); 
   }
   

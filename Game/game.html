@@ -11,7 +11,7 @@
     
     <audio src="gigachad.mp3" type="audio/mpeg" id="gigachadsound"></audio>
     <button id="startbutton" onclick="startthegame()"> Start Game </button>
-    <div id="thegame" onclick="jump()">
+    <div id="thegame" onclick="jump()" ondblclick="startthegame()" >
         <div class="sun" id="sun"></div>
     <div id="game-container" onclick="jump()">
 
@@ -37,6 +37,22 @@
 <div id="GAMEOVER" class="GAMEOVER">GAMEOVER</div>
 <div id="endscore" class="endscore"></div>
 <button id="restartbutton" onclick="restartthegame()"> RESTART </button>
+
+
+<div style="display: none;">
+    <img src="blocks/bat-block.gif" alt="Preload Image">
+    <img src="blocks/tank-block.png" alt="Preload Image">
+    <img src="blocks/sumo-block.png" alt="Preload Image">
+    <img src="blocks/monster-block.png" alt="Preload Image">
+    <img src="blocks/bat-block.gif" alt="Preload Image">
+    <img src="blocks/death-block.png" alt="Preload Image">
+    <img src="blocks/turjo-block.png" alt="Preload Image">
+    <img src="blocks/hysam-block.png" alt="Preload Image">
+    <img src="blocks/hamim-block.png" alt="Preload Image">
+    <img src="blocks/mosarof-block.png" alt="Preload Image">
+    <img src="blocks/gigachad-block.png" alt="Preload Image">
+</div>
+
 </div>
 
 <script src="gamescript.js"></script>    
