@@ -1,66 +1,64 @@
-body {
-    background-image: url(/background\ image.jpg);
-}
+.game {
+    width: 1000px;
+    height: 200px;
+    border: 1px solid black;
+    margin: auto;
+    float: left;
 
-#keys {
-    display: grid;
-    grid-template-columns: repeat( 4 , 1fr);
-       
-    
-
-}
-#keys button {
-    font-size: 2rem;
-    padding: 31px;
-    background-color: black ;
-    color: white
     
 }
 
-.displaybox {
-    width: 370px;
-    height: 70px;
-    font-size: 2rem;
-    background-image: url(/stars.jpeg);
-    background-size: cover;
-    background-position: center;
-    color: white;
-    border: none;
+#player {
+    width: 20px;
+    height: 80px;
+    background-color: red;
+    position: relative;
+    top: 120px;
+    left: 200px;
     
 }
 
-.calcontainer{
-   flex-direction: column;
-   box-shadow: 1px 1px 4px 1px black;
-   background-image: url(/stars.jpeg);
+.jump {
+    animation: jump 500ms linear;
+}
+
+
+#block {
+    
+    background-color: blue;
+    height: 50px;
+    width: 20px;
+    position: relative;
+    top: 70px;
+    left: 1000px;
+    animation: go-left 1s linear infinite;
+}
+
+@keyframes jump {
+    0% {
+        top: 120px;
+    }
+    50% {
+            top: 50px;
+    }
+    60% {
+        top: 50px;  
+    }
+    70% {
+        top: 50px
+    }
+    100% {
+        top: 120px ;
+    }
    
 }
 
-.wrap{
-
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    display: none;
-}
-.skey  {
-    background-color: rgb(255, 217, 0) !important;
-    color: black !important;
-
+@keyframes go-left {
+      0% {
+        left: 990px
+      }
+      100% {
+        left: -20px
+      }
 }
 
-#keys :hover {
-    background-color: rgba(196, 180, 180, 0.288);
-}
-
-.skey:hover {
-    background-color: rgb(218, 165, 32, 0.288) !important;
-}
-
-#uncalbtn {
-    display: none;
-}
-
-.backbtn:hover {
-    background-color: rgb(255, 0, 0) !important;
-}

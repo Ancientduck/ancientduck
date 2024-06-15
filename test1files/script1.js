@@ -1,54 +1,60 @@
-const display = document.querySelector('.displaybox');
-
-function tap(input) {
-    display.value += input
+let player = document.getElementById('player')
+let block = document.getElementById('block')
 
 
+function jump () {
+ 
+  if(player.classList !="jump") {
+    player.classList.add('jump')
+
+  setTimeout(function() {
+    
+    player.classList.remove('jump')
+  } , 500)
+} }
+
+setInterval( () => {
+  
+} , 500)
+
+document.addEventListener('keydown' , (space) => {
+if(space.key === " ") {
+
+  jump()
+
+}})
+
+function checkdeath() {
+
+let playerzone = player.getBoundingClientRect();
+let blockzone = block.getBoundingClientRect();
+
+
+if (
+  playerzone.right > blockzone.left &&
+  playerzone.left < blockzone.right &&
+  playerzone.bottom > blockzone.top &&
+  playerzone.top < blockzone.bottom 
+) { 
+  alert(`GAME OVER`)
+  Displayscore = -1;
+  
+}}
+
+setInterval(checkdeath , 10);
+
+let Displayscore = 0;
+function score() {
+  
+  let showscore = document.getElementById('game-score');
+  Displayscore++
+
+  showscore.innerHTML = `score: ${Displayscore}`
 }
 
-function calculate() {
-    try{
-    display.value = eval(display.value);
-    }
-    catch(ERROR) {
-        display.value = 'Syntax error,try Chat GPT'
-    }
-}
+setInterval(() => {
 
-function backspace() {
-    display.value = display.value.slice(0,-1)
-}
+  score()
+}  ,500)
 
-function reset() {
-
-    display.value = "" ;
-}
-
-const calbtn = document.getElementById('calbtn')
-const cal = document.getElementById('wrap')
-const uncalbtn = document.getElementById('uncalbtn'); 
-
- calbtn.addEventListener('click' , function () {
    
-    cal.style.display="block" ;
-    cal.style.display='flex' ;
-    uncalbtn.style.display='block';
-    calbtn.style.display='none'
-      
- })
-{
-const uncalbtn = document.getElementById('uncalbtn')
-const uncal = document.getElementById('wrap')
-const calbtn = document.getElementById('calbtn')
-
-uncalbtn.addEventListener('click', function() {
-
-      uncal.style.display='none'
-      calbtn.style.display='block'
-      uncalbtn.style.display='none'
-
-        
-})
-
-}
-

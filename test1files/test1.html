@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +8,13 @@
     
 </head>
 <body>
-    <button id="calbtn">show Calculator</button>
-    <button id="uncalbtn">hide Calculator</button>
-    <div class="wrap" id="wrap"> 
-<div class="calcontainer">
-
-    <input class="displaybox" readonly>
-    <div id="keys">
-    <button class="skey" onclick="reset()">C</button>
-    <button onclick="tap('7')">7</button>
-    <button onclick="tap('8')">8</button>
-    <button onclick="tap('9')">9</button>
-    <button class="skey" onclick="tap('+')">+</button>
-    <button onclick="tap('6')">6</button>
-    <button onclick="tap('5')">5</button>
-    <button onclick="tap('4')">4</button>
-    <button class="skey" onclick="tap('-')">-</button>
-    <button onclick="tap('3')">3</button> 
-    <button onclick="tap('2')">2</button>
-    <button onclick="tap('1')">1</button>
-    <button class="skey"  onclick="tap('*')">x</button>
-    <button onclick="tap('0')">0</button>
-    <button onclick="tap('.')">.</button>
-    <button onclick="tap('/')">/</button>
-    <button class="skey" onclick="calculate()">=</button> 
-    <button id="backbtn" class="backbtn" onclick="backspace()">del</button>
+    <div id="thegame">
+    <div id="game-container" onclick="jump()">
+        <div id="game-score">score: 0</div>
+    <div id="game" class="game"></div>
+        <div id="player"></div>
+        <div id="block"></div>
     </div>
-</div>
 </div>
 
 <script src="script1.js"></script>    
