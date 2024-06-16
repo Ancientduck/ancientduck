@@ -5,6 +5,10 @@ let movement = document.getElementById('movement')
 let blockzones = Array.from(document.querySelectorAll('.block'))
 let gigachadsound = document.getElementById('gigachadsound')
 let gigachadblock = document.getElementById('block10')
+let wave = document.getElementById('wave')
+let goku = document.getElementById('goku')
+let gokuhit = document.getElementById('goku-hit')
+let kamehameha = document.getElementById('kamehameha')
 
 
 function jump () {
@@ -33,6 +37,8 @@ function score() {
   Displayscore++
 
   showscore.textContent = `score: ${Displayscore}`  
+
+  
 }
 
 function fortheblocks() {
@@ -74,7 +80,7 @@ function addanotherblock() {
 
 
 let animationSpeed = 1.5; 
-const speedMultiplier = 0.95; 
+const speedMultiplier = 0.99; 
 
 function iamspeed() {
     animationSpeed *= speedMultiplier; 
@@ -92,6 +98,7 @@ function checkdeath() {
 
 
 let playerzone = player.getBoundingClientRect();
+let wavezone = wave.getBoundingClientRect();
 
   for(let block of blockzones ) {
     let blockzone = block.getBoundingClientRect();
@@ -107,14 +114,27 @@ let playerzone = player.getBoundingClientRect();
     
     gameend();
     
-  }}}
+  }}
+  
+   if (
+    playerzone.right > wavezone.left &&
+    playerzone.left < wavezone.right &&
+    playerzone.bottom > wavezone.top &&
+    playerzone.top < wavezone.bottom 
+    )
+  {
+    console.log(`you got blasted into oblivion`)
+    gameend();
+  }
+
+}
 
  
   let startbutton = document.getElementById('startbutton');
   let restartbutton = document.getElementById('restartbutton')
   function startthegame() {
 
-    // thegame.style.display='block';
+    
     startbutton.style.display='none';
     Displayscore = -1 ;
 
@@ -122,7 +142,10 @@ let playerzone = player.getBoundingClientRect();
     fortheblocks()
     forscore = setInterval(score, 50)
     setInterval(iamspeed, 10000);
-    forcheckdeath = setInterval(checkdeath , 50);
+    checkwave();
+    forcheckdeath = setInterval(checkdeath, 50);
+
+    
   }
   function restartthegame() {
 
@@ -140,6 +163,7 @@ let playerzone = player.getBoundingClientRect();
     document.body.style.backgroundSize = "cover";
     restartbutton.style.display = 'block';
     gigachadsound.pause();
+    kamehameha.pause();
 
     console.log(window.innerWidth);
     if(window.innerWidth >= 1024){
@@ -162,3 +186,60 @@ let playerzone = player.getBoundingClientRect();
     clearTimeout(addanotherblocktime); 
   }
   
+  function loadwave() {
+  
+    goku.style.display = "block";
+    gokuhit.style.display = "none";
+    wave.style.display = "none";
+    goku.classList.add('gokumoveanimation');
+}
+
+function hitwave() {
+    
+    gokuhit.style.display = "block";
+    goku.style.display = "none";
+    wave.style.display = "block";
+    wave.classList.add('waveanimation');
+}
+
+function checkwave() {
+    if (Displayscore > 500) {
+        console.log('Kah...Me...Ha....Meeee... ');
+        loadwave();
+
+        kamehameha.play();
+        kamehameha.volume = 0.3;
+      
+        clearInterval(iamspeed);
+        clearTimeout(addanotherblocktime);
+        clearInterval(fortheblocks);
+        clearTimeout(forcheckwave)
+
+       
+        goku.addEventListener("animationend", function waveend() {
+            console.log('HAAAAAAAAAAA');
+            hitwave();
+            
+
+        });
+        
+        wave.addEventListener('animationend' , function goodreflex() {
+          
+          wave.style.display="none";
+          gokuhit.style.display = "none";
+
+
+          kamehameha.pause()
+          
+          setInterval(iamspeed , 10000);
+          addanotherblock()
+          fortheblocks()
+
+
+        })
+
+
+        return;
+    }
+    forcheckwave = setTimeout(checkwave, 50);
+}

@@ -10,6 +10,84 @@ body {
     overflow: hidden;
     
 }
+#goku {
+    background-image: url(blocks/load-wave.png);
+    width: 5vw;
+    height: 8vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 33.3%;
+    left: 70.1%;
+    display: none;
+    
+    
+}
+
+.gokumoveanimation {
+    animation: gokumove linear 11s ;
+}
+
+#goku-hit {
+    background-image: url(blocks/shoot-wave.png);
+    width: 14vh;
+    height: 15vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 28.3%;
+    left: 68.1%;
+    display: none;
+    
+}
+
+#wave {
+
+    background-image: linear-gradient(to left,  blue , rgb(39, 205, 255) ,rgb(36, 36, 233) );
+    height: 5vh;
+    border: 5px solid rgba(4, 121, 255, 0.966);
+    width: 100vh;
+    transform-origin: right;
+    display: none;
+    position: absolute;
+    left: 20%;
+    bottom: 36%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 200%;
+    border-bottom-right-radius: 200%;
+    border-left-width: thin;
+    
+}
+
+
+@keyframes thewaveanimation {
+
+   from {
+        transform: scaleX(0%);
+   }
+
+   to{
+      transform: scaleX(100%);
+   }
+
+}
+
+@keyframes gokumove {
+
+    from {
+          left: 73.1%;;
+    }
+    to {
+          
+        left: 70.1%;
+
+    }
+}
+
+.waveanimation {
+    animation: thewaveanimation 500ms linear;
+}
 
 #block {background-image: url(blocks/tank-block.png);}
 #block2 {background-image: url(blocks/sumo-block.png);}
@@ -248,6 +326,23 @@ body {
         z-index: -1;
         
     }
+    @keyframes gokumove {
+
+        from {
+              left: 90.1%;;
+        }
+        to {
+              
+            left: 70.1%;
+    
+        }
+    }
+    
+    #wave {
+
+        left: -130%;
+        bottom: 36%;
+    }
 
     #ingame-score-container {
         position: absolute;
@@ -290,6 +385,19 @@ body {
         background-color: green;
         width: 80vw;
     }
+    #goku {
+        background-image: url(blocks/load-wave.png);
+        width: 14vw;
+        height: 15vh;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 24.3%;
+        left: 70.1%;
+        display: none;
+        
+    }
+    
 
 
     @keyframes gamebackground {

@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Lost Piece</title>
+    <meta http-equiv="refresh">
+    <title>test1</title>
     <link rel="stylesheet" href="gamestyle.css">
     
 </head>
 <body>
     
     <audio src="gigachad.mp3" type="audio/mpeg" id="gigachadsound"></audio>
+    <audio src="kamehameha.mp3" type="audio/mpeg" id="kamehameha"></audio>
     <button id="startbutton" onclick="startthegame()"> Start Game </button>
     <div id="thegame" onclick="jump()">
         <div class="sun" id="sun"></div>
@@ -30,6 +32,12 @@
         <div id="block8" class="block"></div>
         <div id="block9" class="block"></div>
         <div id="block10" class="block"></div>
+        <div id="wave-container">
+            <div id="goku"></div>
+            <div id="goku-hit"></div>
+           <div id="wave" class="wave"></div>
+        </div>
+    
     </div>
     
 </div>
@@ -39,18 +47,18 @@
 <button id="restartbutton" onclick="restartthegame()"> RESTART </button>
 
 
-<div style="display: none;">
-    <img src="blocks/bat-block.gif" alt="Preload Image">
-    <img src="blocks/tank-block.png" alt="Preload Image">
-    <img src="blocks/sumo-block.png" alt="Preload Image">
-    <img src="blocks/monster-block.png" alt="Preload Image">
-    <img src="blocks/bat-block.gif" alt="Preload Image">
-    <img src="blocks/death-block.png" alt="Preload Image">
-    <img src="blocks/turjo-block.png" alt="Preload Image">
-    <img src="blocks/hysam-block.png" alt="Preload Image">
-    <img src="blocks/hamim-block.png" alt="Preload Image">
-    <img src="blocks/mosarof-block.png" alt="Preload Image">
-    <img src="blocks/gigachad-block.png" alt="Preload Image">
+<div style="display: none;" id="preloadimg">
+    <img src="blocks/bat-block.gif" class = "preloadimg">
+    <img src="blocks/tank-block.png" class = "preloadimg">
+    <img src="blocks/sumo-block.png" class = "preloadimg">
+    <img src="blocks/monster-block.png" class = "preloadimg">
+    <img src="blocks/bat-block.gif" class = "preloadimg">
+    <img src="blocks/death-block.png" class = "preloadimg">
+    <img src="blocks/turjo-block.png" class = "preloadimg">
+    <img src="blocks/hysam-block.png" class = "preloadimg">
+    <img src="blocks/hamim-block.png" class = "preloadimg">
+    <img src="blocks/mosarof-block.png" class = "preloadimg">
+    <img src="blocks/gigachad-block.png" class = "preloadimg">
 </div>
 
 </div>
@@ -66,4 +74,6 @@
      #speed increased
      #blocks randomized and timed
       2. add music
+
+      NOTE:::: check CHECKDEATH
       -->
