@@ -1,3 +1,4 @@
+
 let player = document.getElementById('player');
 let gameover = document.getElementById('GAMEOVER');
 let thegame = document.getElementById('thegame');
@@ -162,8 +163,11 @@ let wavezone = wave.getBoundingClientRect();
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     restartbutton.style.display = 'block';
+    musicbtn.style.display= 'none';
     gigachadsound.pause();
     kamehameha.pause();
+    gamemusic.pause();
+    
 
     console.log(window.innerWidth);
     if(window.innerWidth >= 1024){
@@ -243,3 +247,48 @@ function checkwave() {
     }
     forcheckwave = setTimeout(checkwave, 50);
 }
+
+// for music 
+
+let musicbtn = document.getElementById('musicbutton');
+
+musicbtn.onclick = function() {
+  if (musicbtn.innerHTML === `Music`) {
+    musicbtn.innerHTML = `Pause`;
+    gamemusic.play()
+    gamemusic.volume = 0.3 ;
+    gamemusic.addEventListener(`ended`, () => {
+      gamemusic.play();
+    })
+  } else {
+    musicbtn.innerHTML = `Music`;
+    gamemusic.pause()
+  }
+}
+
+let colors = ['skyblue', 'lightgreen', 'lavender', 'aquamarine', 'peachpuff', 'lightsteelblue', 'thistle', 'palegoldenrod', 'lightcoral', 'powderblue'];
+let textcolors = ['midnightblue', 'darkgreen', 'indigo', 'darkslategray', 'sienna', 'darkblue', 'darkorchid', 'darkolivegreen', 'maroon', 'slategray'];
+let currentcolor = 0;
+let currenttextcolor = 0;
+
+function changecolor() {
+  musicbtn.style.backgroundColor = colors[currentcolor]
+  musicbtn.style.boxShadow = colors[currentcolor]
+  musicbtn.style.color = textcolors[currenttextcolor]
+  currentcolor = (currentcolor + 1) % colors.length
+  currenttextcolor = (currenttextcolor + 1) % textcolors.length
+}
+
+setInterval(changecolor, 1000);
+
+changecolor();
+
+document.addEventListener('keydown', (g) => {
+  if (g.key === 'g') {
+    clearInterval(forcheckdeath);
+  }
+
+  if(g.key === 'l') {
+    setInterval(checkdeath , 50);
+  }
+});

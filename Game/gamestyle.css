@@ -1,3 +1,12 @@
+* {
+  font-family: "pricedown"
+}
+
+@font-face {
+    font-family: "pricedown";
+    src: url("pricedown bl.otf") format('truetype');
+}
+
 body {
     background-image: url("gamebackimage.jpg");
     margin: 0;
@@ -8,6 +17,15 @@ body {
     height: 100vh;
     z-index: 10;
     overflow: hidden;
+    
+}
+
+#musicbutton {
+    font-size: 3rem;
+    position: absolute;
+    top: 25vh;
+    box-shadow: 1px 1px 50px 10px;
+    transition:  background-color 1s , box-shadow 1s ;
     
 }
 #goku {
@@ -214,7 +232,7 @@ body {
     background-position:center;
     overflow: hidden;
     z-index: 9;
-    box-shadow: 1px 1px 4px 1px black;
+    box-shadow: 1px 1px 700px 1px black;
     animation: gamebackground 5s linear infinite;
 }
 
@@ -311,7 +329,7 @@ body {
 
 #game-score
 {
-    background-color: green;
+    background-color: hsl(120, 86%, 39%);
     width: 40vw ;
     z-index: -1;
     
@@ -326,6 +344,11 @@ body {
         z-index: -1;
         
     }
+    #musicbutton {
+        position: absolute;
+        top: 70vh;
+    }
+
     @keyframes gokumove {
 
         from {
@@ -380,7 +403,7 @@ body {
     
 
     #game-score {
-        color: rgb(37, 37, 148);
+        color: rgb(21, 21, 160);
         border: 1px solid black;
         background-color: green;
         width: 80vw;
@@ -397,7 +420,10 @@ body {
         display: none;
         
     }
-    
+    #player {
+
+        left: 10% !important;
+    }
 
 
     @keyframes gamebackground {
@@ -420,7 +446,7 @@ body {
 
 
     .GAMEOVER {
-        font-size: 4em; /* Adjusted size */
+        font-size: 3.5em; /* Adjusted size */
         color: rgb(128, 0, 0);
         -webkit-text-stroke: 2px rgb(0, 0, 0);
         background-size: cover;
