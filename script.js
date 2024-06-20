@@ -2,19 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const datehover = document.getElementById('datehover');
     const audio = document.getElementById('enterVC');
 
-    // Hover event listener setup
+    
     datehover.addEventListener('mouseover', () => {
         audio.currentTime = 0;
         audio.play();
     });
 
-    // Click event listener setup
+    
     datehover.addEventListener('click', () => {
         displaydate();
         audio.currentTime = 0;
         audio.play();
     });
 });
+
+
+let outaudio = document.getElementById('exitVC')
+
 
 function displaydate() {
     var date = document.getElementById("date");
@@ -365,3 +369,78 @@ function Aclock() {
     setInterval(Aclock, 1000);
 
 
+// start of reflex test
+let testbutton = document.getElementById('starttestbtn')
+let reflextest = document.getElementById('thereactionbox')
+let reflexresult = document.getElementById('yourreactiontime')
+
+function wrongclick()  {
+  alert(`NO`)
+  clearTimeout(forreflex)
+  reflextest.style.background = 'black'
+  reflextest.removeEventListener('click' , wrongclick)
+}
+  testbutton.onclick = function () {
+    reflextest.style.background = 'grey'
+    console.log(`pressed`)
+    checkreflexclick()
+  }
+
+  function checkreflexclick() {
+    if(reflextest.style.background === 'grey') {
+      let reflexdelay = Math.floor(Math.random() * 10000 + 500)
+      console.log(reflexdelay)
+      reflextest.innerHTML = `Wait`
+     forreflex = setTimeout(makeitgreen , reflexdelay)
+    }
+
+    if(reflextest.style.background === 'grey') {
+      reflextest.addEventListener('click' , wrongclick )
+      }
+    }
+    
+  
+  function makeitgreen() {
+    console.log(`its green`)
+    reflextest.innerHTML = `CLICK <br> NOW!!`
+    reflextest.style.background = 'green'
+    starttime = Date.now();
+    reflextest.removeEventListener('click' , wrongclick)
+    reflextime();
+  }
+
+ function reflextime() {
+  if(reflextest.style.background === 'green') {
+   
+    reflextest.addEventListener(`click` , function reactionclick() {
+      
+      let endtime = Date.now()
+      let reflex = endtime - starttime 
+      console.log(reflex)
+      reflextest.style.background = 'black'
+      reflextest.innerHTML = ``
+      yourreactiontime.innerHTML = `Your reaction time is ${reflex} milliseconds`
+      reflextest.removeEventListener('click' , reactionclick)
+        console.log(`removed click`)
+    })
+  }
+ }
+
+let reflexbtn = document.getElementById('reflexbtn')
+let reflexcontainer = document.getElementById('reflexcontainer')
+
+reflexbtn.addEventListener('click' , function showtest() {
+
+    audio.play()
+    audio.currentTime = 0;
+if(reflexcontainer.style.display === "none") {
+    
+    reflexcontainer.style.display = "block";
+} else {
+    reflexcontainer.style.display = "none";
+    outaudio.play()
+    outaudio.currentTime =0;
+    
+}
+})
+// end of reflex test
