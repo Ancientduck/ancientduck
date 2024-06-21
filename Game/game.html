@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" onclick="jump()" >
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,21 +9,28 @@
     
 </head>
 <body>
-    
+    <audio src="Guns/hit.mp3" type="audio/mpeg" id="hit"></audio>
     <audio src="gigachad.mp3" type="audio/mpeg" id="gigachadsound"></audio>
     <audio src="kamehameha.mp3" type="audio/mpeg" id="kamehameha"></audio>
     <audio src="gamemusic.mp3" type="audio/mpeg" id="gamemusic"></audio>
+    <audio src="Guns/gunsound.mp3" type="audio.mpeg" id="gunsound"></audio>
     <button id="startbutton" onclick="startthegame()"> Start Game </button>
     <button id="musicbutton">Music</button>
-    <div id="thegame" onclick="jump()">
+    <div id="thegame">
         <div class="sun" id="sun"></div>
+        <button id="shoot"></button>
+        <div id="bullet" class="bullet"></div>
     <div id="game-container" onclick="jump()">
 
         <div id="ingame-score-container">
             <div id="game-score" style="color: rgb(37, 37, 148); font-size: 5em; border: 1px solid black;">score: 0</div>
         </div>
     <div id="game" class="game"></div>
-        <div id="player"></div>
+    
+        <div id="player">
+            <div id="gun" class="gun"></div>
+            
+        </div>
         <div id="block"  class="block"></div>
         <div id="block2" class="block"></div>
         <div id="block3" class="block"></div>
@@ -72,10 +79,15 @@
 <!-- #the positions has been fixed
      #start and restart button are all in place
      #icons done
-     #obsticale function done. can add as many as i want quickly (add id and class inside a div and the picture inside the css file)
+     #obsticale function done.(add id and class(must be called block) inside a div and the picture inside the css file)
      #speed increased
      #blocks randomized and timed
-      2. add music
+     # Music added
+     # added goku on 500 score (*tip = jump when score hits 723*)
+     # gun lock and loaded
+       
+
+     7. add special enemy
 
       NOTE:::: check CHECKDEATH
       -->

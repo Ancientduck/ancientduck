@@ -20,6 +20,50 @@ body {
     
 }
 
+#gun {
+    position: absolute;
+    background-image: url(Guns/gun.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 3vw;
+    height: 3vh;
+    transform: scaleX(-1);
+    top: 1vh;
+    left: 0px;
+}
+#bullet {
+    background-image: url(Guns/bullet.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1.3vw;
+    height: 2vh;
+    position: absolute;
+    top: 61.8vh;
+    left: 62vh;
+    display: none;
+    backdrop-filter: blur(3px);
+}
+@keyframes shooting {
+    to {left: 100vw;}
+}
+
+.bulletanimation {
+    animation: shooting 1000ms linear;
+}
+#shoot {
+    position: absolute;
+    background-color: black;
+    font-size: larger;
+    top: 60vh;
+    left: 41.1vh;
+    background-image: url(Guns/target.png);
+    background-size: contain;
+    width: 5vh;
+    height: 5vh;
+    background-repeat: no-repeat;
+    
+    
+}
 #musicbutton {
     font-size: 3rem;
     position: absolute;
@@ -369,10 +413,10 @@ body {
 
     #ingame-score-container {
         position: absolute;
-        top: 10%;
+        top: 26%;
         left: 5%;
         width: 80vw;
-        font-size: 1em;
+        font-size: 0.8em;
         display: flex;
         
     }
@@ -483,7 +527,29 @@ body {
         top: 80vh;
         right: 10vw;
     }
+
+    #gun {
+        width: 3vh;
+        left: 1vh;
+
+    }
+    #bullet {
+        display: none;
+        width: 1.5vh;
+        height: 2vh;
+        left: 7vh;
+        top: 62.8vh;
+    }
+    #shoot {
+        left: 3.2vh;
+        top: 65vh;
+    }
+
+    @keyframes shooting {
+        to {left: 180vw;}
+    }
 }
+
 
 @media (max-width: 400px) {
     

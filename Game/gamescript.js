@@ -20,8 +20,13 @@ function jump () {
   setTimeout(function() {
     
     player.classList.remove('jump')
+    bullet.classList.remove('jump')
   } , 500)
-} }
+} 
+if(bullet.classList.contains('jump')) {
+  bullet.classList.remove('jump')
+}
+}
 
 
 document.addEventListener('keydown' , (space) => {
@@ -64,7 +69,6 @@ if(gigachadblock.style.display === "block") {
   gigachadsound.volume = 0.3 ;
 
   gigachadblock.addEventListener('animationend', function() {
-
     gigachadsound.pause();
   }  )
 }
@@ -96,10 +100,9 @@ function iamspeed() {
 
  
 function checkdeath() {
-
-
 let playerzone = player.getBoundingClientRect();
 let wavezone = wave.getBoundingClientRect();
+let bulletzone = bullet.getBoundingClientRect();
 
   for(let block of blockzones ) {
     let blockzone = block.getBoundingClientRect();
@@ -127,9 +130,37 @@ let wavezone = wave.getBoundingClientRect();
     console.log(`you got blasted into oblivion`)
     gameend();
   }
+for (let block of blockzones ){
+let bulletzone = bullet.getBoundingClientRect();
+let blockzone = block.getBoundingClientRect();
+if (
+  bulletzone.right > blockzone.left &&
+  bulletzone.left < blockzone.right &&
+  bulletzone.bottom > blockzone.top &&
+  bulletzone.top < blockzone.bottom 
+) {
+  block.style.display = 'none'
+  console.log(`hit`) 
+  gigachadsound.pause();
+  hit.play()
+  hit.currentTime = 0 ;
+}
+}
+let gokuzone = goku.getBoundingClientRect()
+if(
+  bulletzone.right > gokuzone.left &&
+  bulletzone.left < gokuzone.right &&
+  bulletzone.bottom > gokuzone.top &&
+  bulletzone.top < gokuzone.bottom 
+) {
+  goku.style.display = 'none'
+  kamehameha.pause()
+  setInterval(iamspeed , 10000);
+  addanotherblock()
+  fortheblocks()
 
 }
-
+}
  
   let startbutton = document.getElementById('startbutton');
   let restartbutton = document.getElementById('restartbutton')
@@ -292,3 +323,37 @@ document.addEventListener('keydown', (g) => {
     setInterval(checkdeath , 50);
   }
 });
+// end of music
+
+// for gun 
+
+let shoot = document.getElementById('shoot')
+let bullet = document.getElementById('bullet')
+let gunsound = document.getElementById('gunsound')
+let hit = document.getElementById('hit')
+
+function shooting() {
+        bullet.classList.add('bulletanimation')
+        shoot.style.display='none'
+        bullet.style.display = 'block'
+        gunsound.play()
+        bullet.addEventListener('animationend', () => {
+        bullet.classList.remove('bulletanimation')
+        bullet.style.display = 'none'
+      })
+      setTimeout(showtrigger , 10000)
+      console.log(`timeout activated`)
+    }
+  function showtrigger() {
+    shoot.style.display ='block'
+    console.log(`you may shoot again`)
+  }
+  shoot.onclick = shooting;
+  
+
+ document.addEventListener('keydown' , (gun) => {
+  if(gun.key === 'r' && shoot.style.display === 'block') {
+  shooting()
+}})
+ shoot.style.display = 'block'
+// end gun
