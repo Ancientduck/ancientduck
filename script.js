@@ -130,6 +130,9 @@ document.addEventListener('DOMContentLoaded' , () => {
     let audio = document.getElementById('enterVC')
     let mosarof = document.getElementById('mosarof')
     let hysam = document.getElementById('hysam')
+    let julu = document.getElementById('julu')
+    let pranto = document.getElementById('pranto')
+    let kasem = document.getElementById('kasem')
     let vaiya = document.getElementById('vaiya')
     let vabi = document.getElementById('vabi')
     let hamim = document.getElementById('hamim')
@@ -137,6 +140,7 @@ document.addEventListener('DOMContentLoaded' , () => {
     let apurbo = document.getElementById('apurbo')
     let nonameaudio = document.getElementById('exitVC')
     let gigachad = document.getElementById('gigachad')
+    
     
    let thesubmit = () => {
     
@@ -170,6 +174,9 @@ document.addEventListener('DOMContentLoaded' , () => {
     hysam.style.display = 'none';
     turjo.style.display = 'none';
     mosarof.style.display = 'none';
+    julu.style.display= 'none';
+    pranto.style.display= 'none';
+    kasem.style.display= 'none';
     gigachad.pause()
 
     if(name === '') {
@@ -233,7 +240,25 @@ document.addEventListener('DOMContentLoaded' , () => {
                                   showquote.textContent = '10,000 ta mcq kathai kore asbi sobai';
                                   mosarof.style.display = 'block';
                               }
-                            
+                          else if(lname === 'julfikar' || lname === 'julu' || lname === 'julfucker' || lname === 'julfucking' || lname === 'zulfikar') 
+                          {
+                                   sayname.innerHTML = 'HMMMMMM NIGGGGGGGGGGA'
+                                   showquote.textContent = 'EVERYTHING IS FAIR AND LOVELY';
+                                   julu.style.display = 'block';
+                          }
+                          else if(lname === 'pranto')
+                          {
+                            sayname.innerHTML = 'hmmmm PRANTOOO'
+                            showquote.textContent = 'A quote of you, i do not remember the quote :)'
+                            pranto.style.display = 'block'
+                          }
+                        else if(lname === 'kasem' || lname === 'Kashem' || lname === 'quasem')
+                        {
+                            sayname.innerHTML = 'No introduction needed'
+                            showquote.textContent = 'AMON PITAN DIBO TUI 10 din phone tipte parbi na, ja porte bosh sala'
+                            kasem.style.display = 'block'
+                        }
+                          
                                     
     
                           else {
@@ -415,7 +440,7 @@ function wrongclick()  {
     reflextest.addEventListener(`click` , function reactionclick() {
       
       let endtime = Date.now()
-      let reflex = endtime - starttime 
+      let reflex = ((endtime - starttime) - 100 )
       console.log(reflex)
       reflextest.style.background = 'black'
       reflextest.innerHTML = ``

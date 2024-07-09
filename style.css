@@ -28,18 +28,20 @@ p {
 
 .reflexcontainer {
     position: absolute;
-    left: 76vh;
-    top: 123vh;
     box-shadow: black 0px 0px 10px 5px;
-    border: 1px  solid chocolate;
+    border: 1px solid chocolate;
     z-index: 1000;
+    left: 36%;
+    
 }
+
 
 @media (max-width: 1280px) {
     .reflexcontainer {
-        left: 25px !important;
+        left: 10%;
         top: auto;
         z-index: 1000;
+        transform: scale(0.8);
     }
 }
 
