@@ -235,6 +235,9 @@ body {
 #block9 {background-image: url(blocks/mosarof-block.png);}
 #block10{background-image: url(blocks/gigachad-block.png);}
 #block11{background-image: url(blocks/hysam-gun.png); width: 20px; transform: scale(1.5);}
+#block12{background-image: url(blocks/Kasem-block.png);}
+#block13{background-image: url(blocks/julu-block.png);}
+#block14{background-image: url(blocks/pranto-block.png);}
 
 .block {
     background-size: contain;
