@@ -695,20 +695,51 @@ b {
     display: none;
     height: 300px;
 }
+.reflexbtn
+{
+    padding: 5px !important;
+    box-shadow: 1px 1px 4px 1px black !important;
+    cursor: pointer !important;
+    display: flex !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    font-size: larger;
+    
+}
+.reflexbtn:hover
+{
+    background-color: green !important;
+    transition: 0.3s;
+}
 
-.gamebutton {
+.thelostpiecebtn {
     margin-bottom: auto !important;
     padding: 5px !important;
     box-shadow: 1px 1px 4px 1px black !important;
     cursor: pointer !important;
     display: flex !important;
     text-decoration: none !important;
-
+    background-image: url(Game/gamebackground.webp);
+    background-position: 0 80%;
     
+
     }   
-.gamebutton:hover {
+.thelostpiecebtn:hover {
 
-    background-color: green !important;
-    transition: 0.3s;
-    
+    box-shadow: 1px 1px 10px 1px green !important;
+    transition: 0.3s; 
+}
+.spaceknightbtn
+{
+    margin-bottom: auto !important;
+    padding: 5px !important;
+    box-shadow: 1px 1px 4px 1px black !important;
+    cursor: pointer !important;
+    display: flex !important;
+    text-decoration: none !important;
+    background-image: url(Game2/assets/space.jpg);
+}
+.spaceknightbtn:hover
+{
+  box-shadow: 1px 1px 4px 1px rgb(0, 26, 255) !important;
 }
