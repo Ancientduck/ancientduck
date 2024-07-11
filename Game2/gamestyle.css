@@ -1,0 +1,99 @@
+
+body
+{
+    
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    
+  
+    
+}
+.background
+{
+    background-image: url(assets/space.jpg);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-repeat: repeat;
+    animation:  background 10s linear infinite;
+
+    
+}
+@keyframes background
+{
+    0% {
+       background-position-y: 0px;
+    }
+    100% {
+       background-position-y: 1600px;
+    }
+}
+
+#rocket
+{
+    background-image: url("assets/spaceship.png");
+    width: 30px;
+    height: 30px;
+    scale: 1.5;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+#bomb
+{
+    background-image: url(assets/bomb.png);
+    background-size: contain;
+    scale: 1.5;
+    width: 10px;
+    height: 10px;
+    position: inherit;
+    top: -10px;
+    left: 9.5px;
+    rotate: 134deg;
+    display: none;
+}
+#bombable
+{
+    background-image: url(assets/bomb.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.shooting
+{
+    animation: shooting 0.5s forwards;
+}
+@keyframes shooting
+{
+    to{
+        top: -1000px;
+    }
+}
+.enemy
+{
+    background-image: url(assets/alien.png);
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    scale: 1.5;
+    left: 1000px;
+    position: absolute;
+    display: block;
+    
+}
+.score
+{
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
