@@ -41,8 +41,10 @@ body
     background-size: contain;
     background-repeat: no-repeat;
     transform: translate(-50%,-50%);
-    top: 50%;
+    top: 50% ;
     left: 50%;
+    z-index: 1;
+    display: block;
 }
 #bomb
 {
@@ -75,7 +77,7 @@ body
 @keyframes shooting
 {
     to{
-        top: -1000px;
+        top: -900px;
     }
 }
 .enemy
@@ -90,10 +92,116 @@ body
     display: block;
     
 }
-.score
+#score
 {
-    background-color: black;
-    width: 30px;
-    height: 30px;
+    
+    width: 60px;
+    height: 50px;
+    position:absolute;
+    bottom: 0px;
+    left: calc(100% - 60px);
+    color: rgb(241, 209, 30);
+    text-align: center;
+    align-content: center;
+    font-size: 2em;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    z-index: 0;
+}
+#controls
+{
+    
+    left: 50%;
+    bottom: 1%;
+    transform: translateX(-50%);
     position: absolute;
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+#controls button
+{
+    font-size:medium;
+    padding: 5px;
+    
+}
+ 
+#left-btn
+{
+     position: inherit;
+     left: -100%;
+}
+#right-btn
+{
+    position: inherit;
+    right: -110%;
+}
+#restart 
+{
+  display: none;
+  width: 100px;
+  height: 40px;
+  scale: 2;
+  position: inherit;
+  top: -20%;
+  left: 40%;
+  background-image: url(assets/restart.png) ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: rgba(0, 152, 223, 0.945);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1.3em;
+}
+#start
+{
+    display: block;
+    width: 100px;
+    height: 40px;
+    scale: 2;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    background-image: url(assets/start.png) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: rgba(0, 152, 223, 0.945);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.3em;
+    z-index: 5;
+}
+#endscore
+{
+    display: none;
+    width: 150px;
+    height: 90px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(assets/score.jpg);
+    position: absolute;
+    left: 30%;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+#endscorenumber
+{
+    color: rgb(8, 9, 65);
+    font-size: 2em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#gameover
+{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-image: url(assets/gameover.png);
+    transform: translateX(-50%);
+    transform: translateY(calc(50%-100px));
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 360px;
+    height: 360px;
+    
 }

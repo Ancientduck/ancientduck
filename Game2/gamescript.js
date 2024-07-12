@@ -8,13 +8,36 @@ let y = 500
 let key = {};
 let bombnow = true
 let bombable = document.getElementById("bombable")
+let score = document.getElementById('score')
+let number = 1;
+let left = document.getElementById('left-btn')
+let right = document.getElementById('right-btn')
+let up = document.getElementById('up-btn')
+let down = document.getElementById('down-btn')
+let moveleft = false
+let moveright = false
+let movedown = false
+let moveup = false
+let start = document.getElementById('start')
+let controls = document.getElementById('controls')
 
 function gameloop() 
 {
     requestAnimationFrame(movements)
     requestAnimationFrame(checkhit)
+    requestAnimationFrame(movealiendown)
+    checkmobilemovement()
+   invading = setInterval(() => {
+    spawnmorealiens();
+}, 5000);
 }
-requestAnimationFrame(gameloop)
+start.onclick = function(){
+gameloop()
+rocket.style.display='block'
+start.style.display = 'none'
+}
+
+rocket.style.display='none'
 
 document.addEventListener('keydown', (e) => {
     key[e.key] = true;
@@ -31,9 +54,35 @@ function movements() {
     rocket.style.left = `${x}px`
     rocket.style.top = `${y}px`
     requestAnimationFrame(movements)
-
 }
 
+function checkmobilemovement()
+{
+    let rocketsize = rocket.offsetWidth
+    if(moveright && rocketsize + x + 5 < document.documentElement.clientWidth) x+=10
+    if(moveleft && x-5> 0 ) x-=10
+    if(movedown && y+rocketsize+5 < document.documentElement.clientHeight)y += 10;
+    if(moveup && y+5 > 0)y -= 10;
+    rocket.style.left = `${x}px`
+    rocket.style.top = `${y}px`
+
+    requestAnimationFrame(mobilemovement)
+    
+}
+
+function mobilemovement()
+{
+    left.addEventListener('touchstart', function() { moveleft = true})
+    right.addEventListener('touchstart', function() { moveright = true})
+    up.addEventListener('touchstart', function() { moveup = true})
+    down.addEventListener('touchstart', function() { movedown = true})
+
+    left.addEventListener('touchend', function() { moveleft = false})
+    right.addEventListener('touchend', function() { moveright = false})
+    up.addEventListener('touchend', function() { moveup = false})
+    down.addEventListener('touchend', function() { movedown = false})
+    requestAnimationFrame(checkmobilemovement)
+}
 
 document.addEventListener("keydown", (f) => {
     if(f.key=='f' && bombnow == true)
@@ -132,11 +181,35 @@ enemies.forEach(enemy => {
     }, 1000);
 })
 
+
+
+  enemies.forEach( enemy => {
+    let alienY = parseFloat(window.getComputedStyle(enemy).top)
+    console.log(alienY)
+  })
+
+  function movealiendown()
+  {
+    
+    enemies.forEach(enemy => {
+        let alienY = parseFloat(window.getComputedStyle(enemy).top)
+        enemy.style.top = `${alienY + 2}px`
+        if(alienY + enemy.offsetHeight > document.documentElement.clientHeight)
+        {
+          enemy.style.top = '0px';
+          
+        }
+    })
+    requestAnimationFrame(movealiendown)
+  }
+
+
 //collision check
 
 function checkhit()
 {
     let bombzone = bomb.getBoundingClientRect();
+    let rocketzone = rocket.getBoundingClientRect();
     enemies.forEach(enemy => {
    let enemyzone = enemy.getBoundingClientRect()
    if(bombzone.left < enemyzone.right &&
@@ -145,9 +218,20 @@ function checkhit()
       bombzone.bottom > enemyzone.top
    ) 
    {
+    console.log(`Removing enemy at position: ${enemyzone.top}px`);
      enemy.remove()
      console.log(`OMG PRO PLAYER`)
+     score.innerHTML = number++
+     
    }
+   else if(rocketzone.left < enemyzone.right &&
+    rocketzone.right > enemyzone.left &&
+    rocketzone.top < enemyzone.bottom &&
+    rocketzone.bottom > enemyzone.top)
+    {
+        console.log('U SUCK')
+        gameover()
+    }
     })
 requestAnimationFrame(checkhit)
 }
@@ -190,11 +274,62 @@ function spawnaliens()
 }
 function spawnmorealiens()
 {
-for( let i=0; i<5; i++)
+for( let i=0; i<10; i++)
 {
     spawnaliens();
 }
 }
-setInterval(() => {
-    spawnmorealiens();
-}, 5000);
+
+
+function checkscreen()
+{
+    if(window.innerWidth > 1280)
+    {
+        controls.style.display='none'
+        bombable.style.display='none'
+    }
+}
+checkscreen()
+
+bombable.addEventListener("touchstart", (f) => {
+    if(bombnow == true)
+    {
+       
+       bomb.style.display = 'block'
+       if(!bomb.classList.contains('shooting'))
+       {
+        bomb.classList.add("shooting")
+        
+       forbomb = setTimeout(() => {
+           bomb.classList.remove("shooting") 
+           bomb.style.display ='none'
+        }, 200);
+       }
+       
+      
+       bomb.onanimationend = () => {
+        bomb.style.display ='none'
+       }
+       }
+    }
+)
+let gameoverimage = document.getElementById('gameover')
+let endscorenumber = document.getElementById('endscorenumber')
+let endscore = document.getElementById('endscore')
+let restart = document.getElementById('restart')
+let gamearea = document.getElementById('gamearea')
+function gameover()
+{
+    gamearea.remove()
+    endscorenumber.innerHTML = `${number}`
+    endscore.style.display= 'block'
+    gameoverimage.style.display = 'block'
+    restart.style.display='block'
+    clearInterval(invading)
+}
+
+restart.onclick = () => 
+    {
+        location.reload()
+    }
+
