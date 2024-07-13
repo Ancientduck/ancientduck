@@ -1,13 +1,13 @@
 let rocket = document.getElementById("rocket")
-let bomb = document.getElementById("bomb")
+let laser = document.getElementById("laser")
 let enemies = document.querySelectorAll(".enemy")
 let screenwidth = window.innerWidth; console.log(screenwidth)
 let screenheight = window.innerHeight; console.log(screenheight)
 let x = parseFloat(window.getComputedStyle(rocket).left)
 let y = 500
 let key = {};
-let bombnow = true
-let bombable = document.getElementById("bombable")
+let lasernow = true
+let laserable = document.getElementById("laserable")
 let score = document.getElementById('score')
 let number = 1;
 let left = document.getElementById('left-btn')
@@ -20,7 +20,8 @@ let movedown = false
 let moveup = false
 let start = document.getElementById('start')
 let controls = document.getElementById('controls')
-
+let fire = document.getElementById('fire')
+let dead = document.getElementById('dead')
 function gameloop() 
 {
     requestAnimationFrame(movements)
@@ -85,23 +86,27 @@ function mobilemovement()
 }
 
 document.addEventListener("keydown", (f) => {
-    if(f.key=='f' && bombnow == true)
+    if(f.key=='f' && lasernow == true)
     {
        
-       bomb.style.display = 'block'
-       if(!bomb.classList.contains('shooting'))
+       laser.style.display = 'block'
+       if(!laser.classList.contains('shooting'))
        {
-        bomb.classList.add("shooting")
+        laser.classList.add("shooting")
+        fire.currentTime = 0;
+        fire.play()
         
-       forbomb = setTimeout(() => {
-           bomb.classList.remove("shooting") 
-           bomb.style.display ='none'
+        
+       forlaser = setTimeout(() => {
+           laser.classList.remove("shooting") 
+           laser.style.display ='none'
+           fire.pause()
         }, 200);
        }
        
       
-       bomb.onanimationend = () => {
-        bomb.style.display ='none'
+       laser.onanimationend = () => {
+        laser.style.display ='none'
        }
        }
     }
@@ -208,18 +213,20 @@ enemies.forEach(enemy => {
 
 function checkhit()
 {
-    let bombzone = bomb.getBoundingClientRect();
+    let laserzone = laser.getBoundingClientRect();
     let rocketzone = rocket.getBoundingClientRect();
     enemies.forEach(enemy => {
    let enemyzone = enemy.getBoundingClientRect()
-   if(bombzone.left < enemyzone.right &&
-      bombzone.right > enemyzone.left &&
-      bombzone.top < enemyzone.bottom &&
-      bombzone.bottom > enemyzone.top
+   if(laserzone.left < enemyzone.right &&
+      laserzone.right > enemyzone.left &&
+      laserzone.top < enemyzone.bottom &&
+      laserzone.bottom > enemyzone.top
    ) 
    {
     console.log(`Removing enemy at position: ${enemyzone.top}px`);
      enemy.remove()
+     dead.play()
+     dead.currentTime = 0;
      console.log(`OMG PRO PLAYER`)
      score.innerHTML = number++
      
@@ -236,19 +243,19 @@ function checkhit()
 requestAnimationFrame(checkhit)
 }
 // collision check done
-function bombunavailable()
+function laserunavailable()
 {
-   bomb.onanimationend = () => {
-    bombable.style.display = 'none'
-    bomb.style.display = 'none'
-    bombnow = true;
-    //setTimeout(bombavailable, 1000)
+   laser.onanimationend = () => {
+    laserable.style.display = 'none'
+    laser.style.display = 'none'
+    lasernow = true;
+    //setTimeout(laseravailable, 1000)
    }
 }
-function bombavailable()
+function laseravailable()
 {
-    bombable.style.display = 'block'
-    bombnow = true;
+    laserable.style.display = 'block'
+    lasernow = true;
 }
 function spawnaliens()
 {
@@ -286,29 +293,32 @@ function checkscreen()
     if(window.innerWidth > 1280)
     {
         controls.style.display='none'
-        bombable.style.display='none'
+        laserable.style.display='none'
     }
 }
 checkscreen()
 
-bombable.addEventListener("touchstart", (f) => {
-    if(bombnow == true)
+laserable.addEventListener("touchstart", (f) => {
+    if(lasernow == true)
     {
        
-       bomb.style.display = 'block'
-       if(!bomb.classList.contains('shooting'))
+       laser.style.display = 'block'
+       if(!laser.classList.contains('shooting'))
        {
-        bomb.classList.add("shooting")
+        laser.classList.add("shooting")
+        fire.currentTime = 0;
+        fire.play()
         
-       forbomb = setTimeout(() => {
-           bomb.classList.remove("shooting") 
-           bomb.style.display ='none'
+       forlaser = setTimeout(() => {
+           laser.classList.remove("shooting") 
+           laser.style.display ='none'
+           fire.pause()
         }, 200);
        }
        
       
-       bomb.onanimationend = () => {
-        bomb.style.display ='none'
+       laser.onanimationend = () => {
+        laser.style.display ='none'
        }
        }
     }
@@ -318,6 +328,7 @@ let endscorenumber = document.getElementById('endscorenumber')
 let endscore = document.getElementById('endscore')
 let restart = document.getElementById('restart')
 let gamearea = document.getElementById('gamearea')
+let gameoversound = document.getElementById('gameoversound')
 function gameover()
 {
     gamearea.remove()
@@ -326,6 +337,8 @@ function gameover()
     gameoverimage.style.display = 'block'
     restart.style.display='block'
     clearInterval(invading)
+    gameoversound.play()
+    
 }
 
 restart.onclick = () => 

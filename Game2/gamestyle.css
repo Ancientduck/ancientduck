@@ -46,9 +46,9 @@ body
     z-index: 1;
     display: block;
 }
-#bomb
+#laser
 {
-    background-image: url(assets/bomb.png);
+    background-image: url(assets/laser.png);
     background-size: contain;
     scale: 1.5;
     width: 10px;
@@ -56,17 +56,19 @@ body
     position: inherit;
     top: -10px;
     left: 9.5px;
-    rotate: 134deg;
+    rotate: -90deg;
     display: none;
 }
-#bombable
+#laserable
 {
-    background-image: url(assets/bomb.png);
+    background-image: url(assets/laser.png);
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     width: 50px;
-    height: 50px;
+    height: 30px;
+    scale: 1;
     position: absolute;
+    rotate: -90deg;
     bottom: 0px;
 }
 
